@@ -1,0 +1,46 @@
+group,school_label,est_main,rank_eb_main,est_all,rank_eb_all
+all,Kentridge,0.461,1,0.4442857142857143,1
+all,Kentwood,0.399,2,0.39142857142857146,2
+all,Tahoma,0.374,3,0.3742857142857143,3
+all,Thomas Jefferson,0.357,4,0.355,4
+all,Kentlake,0.354,5,0.3414285714285714,5
+all,Auburn Riverside,0.328,6,0.31357142857142856,6
+all,Auburn Mountainview,0.311,7,0.29833333333333334,9
+all,Todd Beamer,0.301,8,0.305,7
+all,Sumner,0.298,9,0.2714285714285714,11
+all,Decatur,0.287,10,0.3028571428571429,8
+all,Enumclaw,0.277,11,0.2864285714285714,10
+all,Bonney Lake,0.256,12,0.25583333333333336,12
+all,Kent-Meridian,0.251,13,0.2442857142857143,13
+all,Federal Way HS,0.23,14,0.24071428571428571,14
+all,Auburn HS,0.201,15,0.21142857142857144,15
+gpa_hi,Kentwood,0.6799999999999999,1,0.6799999999999999,1
+gpa_hi,Kentridge,0.6625000000000001,2,0.6625000000000001,2
+gpa_hi,Kentlake,0.6074999999999999,3,0.6074999999999999,3
+gpa_hi,Tahoma,0.588,4,0.5885714285714285,4
+gpa_hi,Thomas Jefferson,0.581,5,0.5742857142857143,5
+gpa_hi,Auburn Riverside,0.572,6,0.5528571428571428,6
+gpa_hi,Auburn Mountainview,0.536,7,0.5166666666666667,7
+gpa_hi,Sumner,0.532,8,0.4878571428571429,12
+gpa_hi,Kent-Meridian,0.51,9,0.51,8
+gpa_hi,Todd Beamer,0.504,10,0.495,10
+gpa_hi,Decatur,0.495,11,0.51,9
+gpa_hi,Enumclaw,0.49,12,0.49,11
+gpa_hi,Bonney Lake,0.489,13,0.4825,13
+gpa_hi,Federal Way HS,0.435,14,0.4492857142857143,14
+gpa_hi,Auburn HS,0.434,15,0.4407142857142857,15
+gpa_lo,Kentwood,0.19,1,0.19,1
+gpa_lo,Kentridge,0.21,2,0.21,2
+gpa_lo,Tahoma,0.122,3,0.12285714285714286,3
+gpa_lo,Kentlake,0.1375,4,0.1375,4
+gpa_lo,Kent-Meridian,0.11,5,0.11,5
+gpa_lo,Decatur,0.104,6,0.10857142857142857,6
+gpa_lo,Auburn Mountainview,0.095,7,0.09083333333333334,9
+gpa_lo,Enumclaw,0.095,8,0.095,7
+gpa_lo,Thomas Jefferson,0.091,9,0.09357142857142857,8
+gpa_lo,Auburn Riverside,0.077,10,0.075,11
+gpa_lo,Sumner,0.073,11,0.06769230769230769,13
+gpa_lo,Todd Beamer,0.069,12,0.075,10
+gpa_lo,Bonney Lake,0.06444444444444444,13,0.06636363636363636,12
+gpa_lo,Auburn HS,0.058,14,0.05642857142857143,15
+gpa_lo,Federal Way HS,0.056,15,0.05785714285714286,14

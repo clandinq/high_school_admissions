@@ -1,0 +1,605 @@
+---
+title: "¿Qué pasa después de la secundaria?"
+subtitle: "Resultados postsecundarios de los graduados de las secundarias públicas de Auburn y distritos vecinos (Washington)"
+author: "César Landín"
+date: 2026-10-02
+lang: es
+format:
+  html:
+    embed-resources: true
+    toc: true
+    toc-depth: 2
+    toc-title: "Contenido"
+    theme: cosmo
+    fig-format: svg
+    fig-width: 9
+    fig-height: 5.5
+    page-layout: article
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+#| label: setup
+pacman::p_load(here, tidyverse, gt, scales)
+source(here("script", "00_helpers.R"))
+
+ranks     <- read_csv(here("output", "rank_all_outcomes.csv"))
+enroll    <- read_csv(here("output", "rank_enrollment.csv"))
+shift     <- read_csv(here("output", "rank_shift.csv"))
+shift_rho <- read_csv(here("output", "rank_shift_spearman.csv"))
+summ      <- read_csv(here("output", "summary_index.csv"))
+comp      <- read_csv(here("output", "composition_share_gpa_hi.csv"))
+earn      <- read_csv(here("output", "earnings_table.csv"))
+classif   <- read_csv(here("output", "school_classification.csv"))
+pers_sens <- read_csv(here("output", "persistence_suppression_sensitivity.csv"))
+enr_rho   <- read_csv(here("output", "rank_enrollment_spearman.csv"))
+comp_sens <- read_csv(here("output", "rank_completion_sensitivity.csv"))
+pers_cov  <- read_csv(here("output", "persistence_coverage.csv"))
+
+# Inline helpers: EB rate (as "xx %") for one school, and the regional mean.
+fmt_pct <- function(x) paste0(round(100 * x), " %")
+r_eb <- function(o, g, s) ranks %>% filter(outcome == o, group == g, school_label == s) %>% pull(eb) %>% fmt_pct()
+r_mu <- function(o, g) ranks %>% filter(outcome == o, group == g, school_type == "comprehensive") %>% pull(mu_regional) %>% first() %>% fmt_pct()
+
+# Ranking table: one block per group (GPA >= 3.0 and all students), comprehensive schools only.
+rank_table <- function(o, groups = c("gpa_hi", "all")) {
+  d <- ranks %>%
+    filter(outcome == o, group %in% groups, school_type == "comprehensive") %>%
+    mutate(puesto = if_else(is.na(rank_eb), "—", paste0(rank_eb, if_else(indist_top == 1, " ≈", ""))),
+           ajustada = fmt_pct(eb),
+           observada = if_else(is.na(est), "—",
+                               sprintf("%.0f %% (%.0f–%.0f)", 100 * est, 100 * ci_lo, 100 * ci_hi)),
+           notas = case_when(is.na(est) ~ "sin datos",
+                             cohort_span == 3 & n_supp > 0 ~ paste0("vent. 3 a\u00f1os; ", n_supp, " suprim."),
+                             cohort_span == 3 ~ "vent. 3 a\u00f1os",
+                             n_supp > 0 ~ paste0(n_supp, " suprim."),
+                             TRUE ~ ""),
+           ajustada = if_else(is.na(eb), "\u2014", ajustada)) %>%
+    select(group, school_label, district, puesto, ajustada, observada, notas, rank_eb) %>%
+    pivot_wider(names_from = group, values_from = c(puesto, ajustada, observada, notas, rank_eb))
+  d <- d %>%
+    arrange(.data[[paste0("rank_eb_", groups[1])]]) %>%
+    select(school_label, district, all_of(unlist(map(groups, ~ grep(paste0("_", .x, "$"), names(d), value = TRUE))))) %>%
+    select(-starts_with("rank_eb_"))
+  tab <- d %>%
+    gt() %>%
+    cols_label(school_label = "Escuela", district = "Distrito")
+  for (g in groups) {
+    tab <- tab %>%
+      tab_spanner(label = group_labels[[g]], columns = ends_with(paste0("_", g))) %>%
+      cols_label(!!paste0("puesto_", g) := "Puesto",
+                 !!paste0("ajustada_", g) := "Tasa ajustada",
+                 !!paste0("observada_", g) := "Observada (IC 95 %)",
+                 !!paste0("notas_", g) := "Notas")
+  }
+  tab %>%
+    tab_source_note(paste0("Cohortes: ", names(which.max(table(ranks$cohorts[ranks$outcome == o & ranks$cohort_span == 1 & ranks$school_type == "comprehensive"]))), ". Puesto seg\u00fan la tasa ajustada. \u2248 = estad\u00edsticamente indistinguible de la escuela en primer lugar (sus intervalos se traslapan). \u201cvent. 3 a\u00f1os\u201d = ERDC solo publica promedios de 3 cohortes para esa escuela y grupo; \u201csuprim.\u201d = cohortes suprimidas por ERDC (tratadas como faltantes).")) %>%
+    cols_align("center", starts_with("puesto")) %>%
+    opt_row_striping() %>%
+    tab_options(table.font.size = px(12), data_row.padding = px(2))
+}
+```
+
+## Resumen
+
+Entre las 15 secundarias públicas comprehensivas de Auburn, Kent, Federal Way, Tahoma, Enumclaw y Sumner-Bonney Lake, **Kentridge** (Kent) está en primer lugar, o estadísticamente empatada con el primero, en casi todos los indicadores. Esto se cumple tanto entre estudiantes con promedio (GPA) de 3.0 o más como entre todos los estudiantes. El `r r_eb("enr_4yr", "gpa_hi", "Kentridge")` de sus graduados con GPA ≥ 3.0 se inscribe en una universidad de 4 años durante el primer año, frente a una media regional de `r r_mu("enr_4yr", "gpa_hi")`. El `r r_eb("comp_ba6", "gpa_hi", "Kentridge")` obtiene una licenciatura en 6 años (media regional: `r r_mu("comp_ba6", "gpa_hi")`). Kentwood, Tahoma y Thomas Jefferson completan el grupo alto.
+
+Dentro del distrito de Auburn, **Auburn Riverside** y **Auburn Mountainview** están cerca de la media regional. Entre sus estudiantes con GPA ≥ 3.0, la inscripción en universidades de 4 años es de `r r_eb("enr_4yr", "gpa_hi", "Auburn Riverside")` y `r r_eb("enr_4yr", "gpa_hi", "Auburn Mountainview")`, y la licenciatura en 6 años es de `r r_eb("comp_ba6", "gpa_hi", "Auburn Riverside")` y `r r_eb("comp_ba6", "gpa_hi", "Auburn Mountainview")`. **Auburn High School** ocupa el último lugar en la mayoría de los indicadores, incluso al comparar solo estudiantes con GPA ≥ 3.0 (`r r_eb("enr_4yr", "gpa_hi", "Auburn HS")` y `r r_eb("comp_ba6", "gpa_hi", "Auburn HS")`).
+
+La persistencia al segundo año de universidad varía poco: entre 91 % y 96 % para estudiantes con GPA ≥ 3.0, y la mayoría de las escuelas son indistinguibles entre sí. La inscripción en la Universidad de Washington sigue otro patrón:
+
+- Thomas Jefferson, Kentridge, Kent-Meridian, Todd Beamer y Federal Way HS envían entre 12 % y 15 % de sus graduados.
+- Tahoma, Sumner, Bonney Lake y Enumclaw envían entre 3 % y 6 %, a pesar de su alta inscripción general en universidades de 4 años.
+
+El ranking de estudiantes con GPA ≥ 3.0 y el de todos los estudiantes se parecen mucho (correlación de rangos entre `r sprintf("%.2f", min(shift_rho$spearman))` y `r sprintf("%.2f", max(shift_rho$spearman))`).
+
+**Todo esto es descriptivo.** Las diferencias reflejan en buena parte quién asiste a cada escuela (nivel socioeconómico, preparación previa, expectativas familiares), no necesariamente lo que la escuela aporta.
+
+## Datos y métodos
+
+**Fuente.** Los datos vienen del tablero *High School Graduate Outcomes* del Education Research and Data Center (ERDC) del estado de Washington, descargado el 2 de octubre de 2026. Cubre a los graduados de secundarias públicas de Washington y los vincula con registros de inscripción universitaria (National Student Clearinghouse y colegios comunitarios del estado), títulos obtenidos y salarios reportados al seguro de desempleo de Washington. ERDC publica porcentajes por escuela, cohorte y subgrupo, **no** microdatos.
+
+**Escuelas.** Se incluyen las 15 secundarias comprehensivas de los seis distritos. Las escuelas alternativas, de reenganche, en línea y los programas de transición quedan fuera del ranking; la lista completa está en el [apéndice](#apendice). Dos escuelas por elección (*choice*), TAFA at Saghalie y Kent Laboratory Academy, se excluyen del ranking porque tienen muy pocas cohortes.
+
+**Subgrupo de alto rendimiento.** El único corte de desempeño académico en los datos es el **GPA de secundaria: 3.0 o más frente a menos de 3.0**. Es un corte grueso: entre 38 % y 61 % de los graduados de cada escuela lo superan (ver [composición](#composicion)). Además, cada escuela califica a su manera, así que un 3.0 no significa lo mismo en todas partes. No hay cortes más finos (3.5+, puntajes de exámenes estatales, etc.).
+
+**Cohortes.** Cada indicador promedia las 10 cohortes de graduación más recientes que tienen datos completos:
+
+| Indicador | Cohortes de graduación |
+|---|---|
+| Inscripción el primer año | 2015–2024 |
+| Persistencia al segundo año | 2014–2023 |
+| Título en 6 años | 2009–2018 |
+| Título asociado a los 2 años | 2013–2022 |
+
+La cohorte 2025 solo tiene inscripción en otoño y no es comparable con las anteriores, así que se excluye. En **Kent y Enumclaw**, ERDC publica los datos por GPA únicamente como promedios móviles de 3 cohortes. Para esas escuelas usamos ventanas que no se traslapan (por ejemplo 2022–24, 2019–21, 2016–18 y 2013–15). Por eso tienen menos observaciones independientes e intervalos más anchos en el grupo de GPA ≥ 3.0.
+
+**Datos suprimidos.** ERDC oculta las celdas con muy pocos estudiantes y publica en su lugar un rango (por ejemplo "90–100 %"). Aquí **se tratan como faltantes, no como cero**. En persistencia, la supresión ocurre casi siempre porque muy pocos estudiantes abandonan, así que omitir esas celdas sesga ligeramente a la baja a las escuelas con mejores resultados. Una prueba de sensibilidad con el punto medio y el límite inferior del rango no cambia los resultados ([apéndice](#sensibilidad)).
+
+**Incertidumbre.** ERDC **no publica el número de estudiantes** en los archivos de tasas, así que no se pueden calcular intervalos de Wilson ni ponderar por tamaño. En su lugar:
+
+- La tasa de cada escuela es el promedio simple de sus cohortes. Dentro de una escuela, el tamaño de las cohortes es parecido de un año a otro.
+- El intervalo de confianza de 95 % se basa en la variación entre cohortes: error estándar = desviación estándar entre cohortes / √(número de cohortes), con la distribución t. Este intervalo incluye el ruido muestral y los cambios reales de un año a otro, así que es algo conservador.
+
+**Tasa ajustada (bayes empírico).** Para que una escuela no quede primera o última solo por ruido, cada tasa se "acerca" a la media regional. Cuanto menos precisa es la tasa de una escuela respecto a la variación real entre escuelas, más se acerca. En términos técnicos, es un modelo normal–normal: la media regional y la varianza entre escuelas (τ²) se estiman con el método de momentos de DerSimonian–Laird sobre las 15 escuelas. La tasa ajustada es B·(media regional) + (1−B)·(tasa observada), con B = EE²/(EE²+τ²). Como las escuelas son grandes y promediamos 10 cohortes, el ajuste es pequeño: la mediana de B va de 2 % a 17 % según el indicador. Los puestos se basan en la tasa ajustada.
+
+**¿Empate o diferencia real?** Marcamos con ≈ a las escuelas cuyo intervalo de 95 % se traslapa con el de la escuela en primer lugar. Es un criterio conservador: dos escuelas cuyos intervalos se traslapan podrían diferir, pero no podemos afirmarlo con estos datos.
+
+**Universidades selectivas.** La lista definida de antemano incluye instituciones con tasas de admisión de aproximadamente 35 % o menos, o una insignia estatal con admisión selectiva:
+
+- **En Washington:** University of Washington y Whitman College.
+- **Fuera del estado:** Stanford, University of Pennsylvania, Carnegie Mellon, UC Berkeley, UCLA, UC San Diego, UC Santa Barbara, UC Irvine, University of Michigan, USC, NYU, Boston University, Northeastern, Tulane y UW–Madison.
+
+Sin embargo, el archivo de ERDC **solo nombra las ~8 instituciones más comunes de cada escuela y cohorte**; el resto aparece como "Otra". En la práctica, **ninguna universidad selectiva aparte de UW aparece nombrada** para estas escuelas. Además, ERDC agrupa los tres campus de UW (Seattle, Bothell y Tacoma). El indicador de "universidades selectivas" se reduce así a **inscripción en UW (cualquier campus)**, expresada como porcentaje de todos los graduados, y no tiene corte por GPA.
+
+## Rankings por indicador
+
+Cada gráfica muestra dos tasas por escuela. El círculo hueco con su línea es la tasa observada con su intervalo de 95 %. El punto negro es la tasa ajustada. Las escuelas en azul son indistinguibles de la primera. La línea discontinua es la media regional.
+
+### Inscripción en una universidad de 4 años (primer año)
+
+Es el porcentaje de graduados que se inscribe en una universidad de 4 años en cualquier momento del primer año después de la secundaria.
+
+```{r}
+#| label: fig-enr4
+#| fig-cap: "Inscripción en universidad de 4 años en el primer año, cohortes 2015–2024."
+plot_dotci(ranks %>% filter(outcome == "enr_4yr"), "Inscripción en universidad de 4 años", "% de graduados")
+```
+
+```{r}
+#| column: page-inset-right
+rank_table("enr_4yr")
+```
+
+### Inscripción en cualquier institución postsecundaria (primer año)
+
+Incluye universidades de 4 años y colegios comunitarios o técnicos (2 años).
+
+```{r}
+#| label: fig-enrany
+#| fig-cap: "Inscripción en cualquier institución en el primer año, cohortes 2015–2024."
+plot_dotci(ranks %>% filter(outcome == "enr_any"), "Inscripción en cualquier institución postsecundaria", "% de graduados")
+```
+
+```{r}
+#| column: page-inset-right
+rank_table("enr_any")
+```
+
+<details><summary>Inscripción en colegios de 2 años (sin dirección "mejor/peor")</summary>
+
+La inscripción en colegios comunitarios no es buena ni mala en sí misma: incluye a estudiantes que luego se transfieren a universidades de 4 años. Se muestra como contexto.
+
+```{r}
+#| column: page-inset-right
+rank_table("enr_2yr")
+```
+
+</details>
+
+### Inscripción en la Universidad de Washington
+
+Es el porcentaje de **todos** los graduados que se inscribe en UW (cualquiera de sus tres campus) en el primer año. No hay corte por GPA.
+
+```{r}
+#| label: fig-uw
+#| fig-cap: "Inscripción en UW (todos los campus) como % de graduados, cohortes 2015–2024."
+plot_dotci(ranks %>% filter(outcome == "sel_uw"), "Inscripción en la Universidad de Washington", "% de graduados", groups = "all")
+```
+
+```{r}
+#| column: page-inset-right
+rank_table("sel_uw", groups = "all")
+```
+
+### Persistencia al segundo año (universidades de 4 años)
+
+Entre quienes empezaron en una universidad de 4 años, es el porcentaje que sigue inscrito en cualquier institución al año siguiente. Para Decatur, Todd Beamer y Auburn Mountainview, ERDC no publica este dato por GPA.
+
+```{r}
+#| label: fig-per
+#| fig-cap: "Persistencia al segundo año entre quienes empezaron en universidad de 4 años, cohortes 2014–2023."
+plot_dotci(ranks %>% filter(outcome == "per_4yr"), "Persistencia al segundo año (universidades de 4 años)", "% de quienes empezaron en 4 años")
+```
+
+```{r}
+#| column: page-inset-right
+rank_table("per_4yr")
+```
+
+### Licenciatura en 6 años
+
+Es el porcentaje de **todos** los graduados (no solo de los inscritos) que tiene una licenciatura (*bachelor's*) o un título superior 6 años después de terminar la secundaria.
+
+```{r}
+#| label: fig-ba6
+#| fig-cap: "Licenciatura o más a los 6 años, cohortes 2009–2018."
+plot_dotci(ranks %>% filter(outcome == "comp_ba6"), "Licenciatura en 6 años", "% de graduados")
+```
+
+```{r}
+#| column: page-inset-right
+rank_table("comp_ba6")
+```
+
+### Cualquier título postsecundario en 6 años
+
+Incluye certificados, títulos asociados, aprendizajes formales (*apprenticeships*) y licenciaturas.
+
+```{r}
+#| label: fig-any6
+#| fig-cap: "Cualquier título postsecundario a los 6 años, cohortes 2009–2018."
+plot_dotci(ranks %>% filter(outcome == "comp_any6"), "Cualquier título postsecundario en 6 años", "% de graduados")
+```
+
+```{r}
+#| column: page-inset-right
+rank_table("comp_any6")
+```
+
+### Título asociado a los 2 años (indicador de Running Start)
+
+Un título asociado obtenido apenas 2 años después de la secundaria casi siempre proviene de **Running Start**, el programa estatal que permite cursar el colegio comunitario durante los últimos años de secundaria. Este indicador sirve como señal aproximada de cuánto usan Running Start los estudiantes de cada escuela.
+
+- Solo se muestra para todos los estudiantes, porque para GPA ≥ 3.0 ERDC suprime la mayoría de las cohortes.
+- Las diferencias son pequeñas, y cinco escuelas son indistinguibles de la primera.
+
+```{r}
+#| label: fig-aa2
+#| fig-cap: "Título asociado/certificado como máximo título a los 2 años, cohortes 2013–2022."
+plot_dotci(ranks %>% filter(outcome == "comp_aa2"), "Título asociado a los 2 años (Running Start)", "% de graduados", groups = "all")
+```
+
+```{r}
+#| column: page-inset-right
+rank_table("comp_aa2", groups = "all")
+```
+
+### Ingresos (descriptivo, sin ranking)
+
+Los ingresos se muestran solo como referencia, por cuatro razones:
+
+- ERDC solo publica medianas que juntan todas las cohortes.
+- Están condicionadas al título obtenido. Comparar a quienes tienen licenciatura de distintas escuelas no es comparar escuelas.
+- Solo cubren empleos en Washington, así que quienes se mudan fuera del estado, quizá los de universidades más selectivas, no aparecen.
+- No permiten calcular intervalos de confianza.
+
+```{r}
+#| label: fig-earn
+#| fig-cap: "Mediana de ingresos anuales 10 años después de la secundaria, por título más alto obtenido."
+e10 <- earn %>% filter(years_after == 10) %>%
+  mutate(cred = recode(credential, "Bachelor's or Higher" = "Licenciatura o más", "HS Diploma" = "Solo diploma de secundaria"),
+         grp = factor(group_labels[group], levels = group_labels[c("gpa_hi", "all")]))
+ord <- e10 %>% filter(school_type != "state", credential == "Bachelor's or Higher", group == "gpa_hi") %>% arrange(median_earnings) %>% pull(school_label)
+st <- e10 %>% filter(school_type == "state")
+ggplot(e10 %>% filter(school_type != "state") %>% mutate(school_label = factor(school_label, levels = ord)),
+       aes(x = median_earnings, y = school_label, colour = grp)) +
+  geom_vline(data = st, aes(xintercept = median_earnings, colour = grp), linetype = "dashed", show.legend = FALSE) +
+  geom_point(size = 2.2) +
+  facet_wrap(~ cred, scales = "free_x") +
+  scale_x_continuous(labels = label_dollar()) +
+  scale_colour_manual(values = c("#1b6ca8", "#e08214"), name = NULL) +
+  labs(x = "Mediana de ingresos anuales (USD)", y = NULL,
+       caption = "Líneas discontinuas: mediana estatal. Solo empleo cubierto por el seguro de desempleo de Washington; todas las cohortes agrupadas.") +
+  theme_minimal(base_size = 11) +
+  theme(legend.position = "bottom", plot.caption = element_text(hjust = 0, colour = "grey40", size = 8))
+```
+
+## ¿Cambia el ranking al mirar solo a los estudiantes de alto rendimiento? {#cambios}
+
+Comparamos el puesto de cada escuela entre sus graduados con GPA ≥ 3.0 y entre todos sus graduados.
+
+```{r}
+shift_rho %>%
+  mutate(outcome = recode(outcome, enr_4yr = "Inscripción 4 años", enr_any = "Inscripción (cualquiera)",
+                          per_4yr = "Persistencia 4 años", comp_ba6 = "Licenciatura en 6 años",
+                          comp_any6 = "Cualquier título en 6 años")) %>%
+  gt() %>%
+  cols_label(outcome = "Indicador", n_schools = "Escuelas", spearman = "Correlación de rangos (Spearman)",
+             mean_abs_shift = "Cambio medio de puesto", max_abs_shift = "Cambio máximo") %>%
+  fmt_number(c(spearman, mean_abs_shift), decimals = 2) %>%
+  tab_options(table.font.size = px(13))
+```
+
+Los dos rankings son muy parecidos. Los cambios más notables son estos:
+
+- **Kent-Meridian** sube con fuerza en el grupo de GPA ≥ 3.0: pasa del puesto 13 al 9 en licenciatura y del 4 al 1 en persistencia. Sus estudiantes con GPA ≥ 3.0 obtienen resultados similares a los de las mejores escuelas, aunque su promedio general es bajo.
+- **Todd Beamer** baja: del puesto 9 al 14 en inscripción en 4 años.
+
+Un matiz importante: cuantos menos estudiantes de una escuela superan el 3.0, más seleccionado es su grupo de GPA ≥ 3.0. Esto puede favorecer mecánicamente a escuelas como Kent-Meridian (39 % con GPA ≥ 3.0).
+
+La brecha entre el grupo de GPA ≥ 3.0 y el total ronda los 20–25 puntos porcentuales en casi todas las escuelas, tanto en inscripción en 4 años como en licenciatura.
+
+```{r}
+shift %>%
+  filter(outcome %in% c("enr_4yr", "comp_ba6")) %>%
+  mutate(outcome = recode(outcome, enr_4yr = "Inscripción 4 años", comp_ba6 = "Licenciatura 6 años")) %>%
+  select(outcome, school_label, rank_eb_gpa_hi, rank_eb_all, rank_shift, gap) %>%
+  pivot_wider(names_from = outcome, values_from = c(rank_eb_gpa_hi, rank_eb_all, rank_shift, gap)) %>%
+  arrange(`rank_eb_gpa_hi_Inscripción 4 años`) %>%
+  select(school_label, ends_with("Inscripción 4 años"), ends_with("Licenciatura 6 años")) %>%
+  gt() %>%
+  tab_spanner("Inscripción en 4 años", ends_with("Inscripción 4 años")) %>%
+  tab_spanner("Licenciatura en 6 años", ends_with("Licenciatura 6 años")) %>%
+  cols_label(school_label = "Escuela",
+             `rank_eb_gpa_hi_Inscripción 4 años` = "Puesto GPA ≥ 3.0", `rank_eb_all_Inscripción 4 años` = "Puesto todos",
+             `rank_shift_Inscripción 4 años` = "Cambio", `gap_Inscripción 4 años` = "Brecha",
+             `rank_eb_gpa_hi_Licenciatura 6 años` = "Puesto GPA ≥ 3.0", `rank_eb_all_Licenciatura 6 años` = "Puesto todos",
+             `rank_shift_Licenciatura 6 años` = "Cambio", `gap_Licenciatura 6 años` = "Brecha") %>%
+  fmt_percent(starts_with("gap"), decimals = 0) %>%
+  fmt_number(starts_with("rank_shift"), decimals = 0, force_sign = TRUE) %>%
+  tab_source_note("Cambio = puesto entre todos − puesto en GPA ≥ 3.0 (positivo: la escuela mejora al mirar solo a estudiantes con GPA ≥ 3.0). Brecha = tasa ajustada GPA ≥ 3.0 − tasa ajustada de todos.") %>%
+  opt_row_striping() %>%
+  tab_options(table.font.size = px(13))
+```
+
+### Composición: ¿qué parte de cada escuela tiene GPA ≥ 3.0? {#composicion}
+
+ERDC no publica cuántos estudiantes hay en cada grupo. La proporción con GPA ≥ 3.0 se puede deducir de las tasas, porque la tasa total es un promedio ponderado de las tasas de los dos grupos de GPA. Es una aproximación, ya que las tasas vienen redondeadas.
+
+```{r}
+comp %>%
+  arrange(desc(share_gpa_hi)) %>%
+  select(school_label, district, share_gpa_hi) %>%
+  gt() %>%
+  cols_label(school_label = "Escuela", district = "Distrito", share_gpa_hi = "% de graduados con GPA ≥ 3.0 (aprox.)") %>%
+  fmt_percent(share_gpa_hi, decimals = 0) %>%
+  opt_row_striping() %>%
+  tab_options(table.font.size = px(13))
+```
+
+## Resumen estandarizado (complementario)
+
+Este índice es un resumen, no un sustituto de los rankings anteriores. Para cada indicador convertimos la tasa ajustada en una puntuación estandarizada (z) entre las 15 escuelas, y luego promediamos **con pesos iguales (1/4 cada uno)** cuatro indicadores:
+
+- inscripción en 4 años
+- persistencia en 4 años
+- licenciatura en 6 años
+- inscripción en UW
+
+La versión "GPA ≥ 3.0" usa las tasas de ese grupo cuando existen. La inscripción en UW siempre usa a todos los estudiantes. A las escuelas sin persistencia por GPA (Decatur, Todd Beamer, Auburn Mountainview) se les promedian solo tres indicadores.
+
+```{r}
+summ %>%
+  select(view, school_label, z_mean, rank_summary, n_components) %>%
+  pivot_wider(names_from = view, values_from = c(z_mean, rank_summary, n_components)) %>%
+  arrange(rank_summary_gpa_hi) %>%
+  select(school_label, rank_summary_gpa_hi, z_mean_gpa_hi, n_components_gpa_hi, rank_summary_all, z_mean_all) %>%
+  gt() %>%
+  tab_spanner("GPA ≥ 3.0", c(rank_summary_gpa_hi, z_mean_gpa_hi, n_components_gpa_hi)) %>%
+  tab_spanner("Todos los estudiantes", c(rank_summary_all, z_mean_all)) %>%
+  cols_label(school_label = "Escuela", rank_summary_gpa_hi = "Puesto", z_mean_gpa_hi = "Promedio z",
+             n_components_gpa_hi = "Indicadores", rank_summary_all = "Puesto", z_mean_all = "Promedio z") %>%
+  fmt_number(starts_with("z_mean"), decimals = 2) %>%
+  opt_row_striping() %>%
+  tab_options(table.font.size = px(13))
+```
+
+## Escuelas privadas: comparación aparte {#privadas}
+
+::: {.callout-important}
+## Estas escuelas no forman parte del ranking
+ERDC solo cubre escuelas públicas. Las cifras de esta sección vienen de documentos que publican las propias escuelas privadas y la red Cristo Rey. Se descargaron de sus sitios oficiales el 2 de octubre de 2026 y se transcribieron con cita de página. Difieren de ERDC en definición, cohorte, denominador y fuente. Además, estas escuelas **seleccionan** a sus estudiantes por admisión, por colegiatura y, en Cristo Rey, por ingreso familiar. Por eso solo mostramos dónde caería cada cifra dentro de la distribución de las 15 secundarias públicas; no es un puesto.
+:::
+
+```{r}
+#| label: private-setup
+priv_status <- read_csv(here("output", "private_status.csv"))
+priv_comp   <- read_csv(here("output", "private_comparison.csv"), col_types = cols(cohort = col_character()))
+priv_nc     <- read_csv(here("output", "private_not_comparable.csv"), col_types = cols(cohort = col_character()))
+priv_qual   <- read_csv(here("output", "private_qualitative.csv"))
+bench_es <- c(all = "Todos los estudiantes", gpa_hi = "GPA ≥ 3.0", female = "Mujeres (todas)")
+# Position sentence for one private figure in one public distribution.
+pos_txt <- function(id, g, b = "pooled") {
+  d <- priv_comp %>% filter(private_id == id, group == g, basis == b)
+  if (nrow(d) == 0) return("—")
+  sprintf("por encima de %d de %d escuelas públicas (rango público %s–%s)", d$n_below, d$n_public, fmt_pct(d$pub_min), fmt_pct(d$pub_max))
+}
+# Table of comparable figures for one school with their position vs each public benchmark.
+priv_table <- function(sid) {
+  priv_comp %>%
+    filter(school_id == sid) %>%
+    mutate(benchmark = paste0(bench_es[group], if_else(basis == "same_cohort", paste0(" (misma cohorte ", cohort, ")"), " (cohortes agrupadas)")),
+           position  = sprintf("%d de %d", n_below, n_public),
+           rango     = paste0(fmt_pct(pub_min), "–", fmt_pct(pub_max))) %>%
+    select(private_id, outcome_es, value, cohort, denominator_desc, source_type, source, benchmark, position, rango) %>%
+    gt(groupname_col = "private_id") %>%
+    text_transform(locations = cells_row_groups(), fn = function(x) {
+      d <- priv_comp %>% filter(private_id %in% as.integer(x)) %>% distinct(private_id, outcome_es, value, cohort)
+      paste0(d$outcome_es, ": ", fmt_pct(d$value), " (cohorte ", coalesce(d$cohort, "no indicada"), ")")
+    }) %>%
+    cols_hide(c(outcome_es, value, cohort)) %>%
+    cols_label(denominator_desc = "Denominador (según el documento)", source_type = "Tipo", source = "Documento",
+               benchmark = "Distribución pública", position = "Escuelas públicas por debajo", rango = "Rango público") %>%
+    tab_options(table.font.size = px(12), data_row.padding = px(2))
+}
+```
+
+### Datos básicos de las tres escuelas
+
+```{r}
+#| column: page-inset-right
+field_es <- c(location = "Ubicación", commute = "Distancia / traslado desde Auburn", enrollment_size = "Matrícula",
+              coed = "Mixta o de un solo sexo", advanced_courses = "AP / IB / doble crédito",
+              tuition = "Colegiatura publicada", financial_aid = "Ayuda financiera")
+priv_qual %>%
+  filter(field %in% names(field_es)) %>%
+  mutate(value = coalesce(value, "—"), field = factor(field_es[field], levels = field_es),
+         school_name = str_remove(school_name, " (Preparatory School|Jesuit Seattle High School|Academy)$")) %>%
+  select(school_name, field, value) %>%
+  pivot_wider(names_from = school_name, values_from = value) %>%
+  arrange(field) %>%
+  gt() %>%
+  cols_label(field = "") %>%
+  tab_source_note("Texto tal como aparece en los documentos de cada escuela (en inglés). — = no documentado. La distancia y el tiempo de traslado no aparecen en ningún documento y calcularlos requeriría datos externos, así que quedan en blanco.") %>%
+  tab_options(table.font.size = px(12), data_row.padding = px(3))
+```
+
+### Bellarmine Preparatory School (Tacoma)
+
+Es una escuela católica, jesuita y mixta. **No encontramos ninguna cifra comparable con ERDC.** En el sitio de la escuela no encontramos un perfil para universidades, una lista de matriculación con conteos ni un informe del National Student Clearinghouse. Hay un "mapa universitario" de la clase 2025 en otro sitio de la escuela (BellarmineLion.com) y revistas en issuu, pero no se pudieron descargar ni leer.
+
+Lo que sí publica la escuela:
+
+- "99 % de los graduados de Bellarmine van a la universidad". No indica año ni denominador, y no distingue entre universidad de 4 años y de 2 años.
+- "Más de 200 universidades admiten a graduados cada año". Esto cuenta admisiones, no inscripciones.
+
+Ninguna de las dos cifras se puede poner junto a las de ERDC; aparecen en la tabla de cifras no comparables más abajo.
+
+### Holy Names Academy (Seattle, Capitol Hill)
+
+Es una escuela católica **solo para mujeres**. Por eso, además de las distribuciones públicas de todos los estudiantes y de GPA ≥ 3.0, la comparamos con las graduadas mujeres de las mismas escuelas públicas, un grupo que ERDC sí publica. ERDC no cruza sexo con GPA, así que no hay un grupo de "mujeres con GPA ≥ 3.0".
+
+```{r}
+hn <- priv_comp %>% filter(school_id == "holy_names") %>% distinct(private_id, cohort)
+```
+
+Los perfiles de la escuela de 2024-25 y 2025-26 dicen que el **100 % de la clase `r hn$cohort[1]`** y el **100 % de la clase `r hn$cohort[2]`** se inscribieron en una institución postsecundaria (139 y 145 estudiantes). En la clase `r hn$cohort[2]`, esa cifra queda `r pos_txt(hn$private_id[2], "all")` entre todos los estudiantes. También queda `r pos_txt(hn$private_id[2], "female")` entre las graduadas mujeres y `r pos_txt(hn$private_id[2], "gpa_hi")` entre los estudiantes con GPA ≥ 3.0.
+
+```{r}
+#| column: page-inset-right
+priv_table("holy_names")
+```
+
+Advertencias específicas:
+
+- **La cifra la publica la propia escuela.** El perfil no dice cuándo se midió la inscripción ni si se verificó. ERDC usa registros de inscripción reales en cualquier momento del primer año.
+- **No hay conteos por universidad.** La lista de matriculación del perfil agrupa las clases 2023–2026 y solo da nombres (175 instituciones), así que no se pueden calcular la inscripción en universidades de 4 años ni en UW. Según el perfil, 42–57 % de cada clase asistió a instituciones públicas y 43–57 % a privadas, y 6–7 % estudió en el extranjero.
+- **No hay informe del National Student Clearinghouse**, así que no hay persistencia ni títulos terminados.
+- **Selección por admisión y colegiatura** (2026-27: 26 520 dólares; 35 % de las estudiantes con ayuda financiera).
+
+### Cristo Rey Jesuit Seattle High School (Seattle, Rainier Beach)
+
+Es una escuela católica, jesuita y mixta de la red Cristo Rey. Abrió en otoño de 2024 y su primera generación se gradúa en 2028, así que **no tiene resultados universitarios propios**.
+
+Según sus documentos, el modelo funciona así:
+
+- **Trabajo-estudio corporativo.** Cada estudiante asiste a clases cuatro días a la semana y trabaja un día en una empresa u organización del área de Seattle. Cuatro estudiantes comparten un puesto, lo que equivale a cinco días completos de trabajo al mes durante los cuatro años.
+- **Financiamiento.** Con la matrícula completa, la escuela prevé cubrir alrededor del 50 % del costo con el programa de trabajo, 40 % con donaciones y 10 % con la aportación familiar. Las familias pagan entre 40 y 250 dólares al mes, frente a un costo real de 36 757 dólares por estudiante al año.
+- **Admisión según ingreso.** Para ser admitido hay que demostrar necesidad económica. Para ingresar en 2027-28, el ingreso de un hogar de 4 personas generalmente no puede superar 78 550 dólares (hasta 121 150 dólares en admisiones limitadas). A nivel de red, la regla es un ingreso familiar bruto de hasta 250 % del umbral federal de pobreza. **Si la familia supera esos límites, el estudiante no es elegible.**
+
+#### Datos de la red Cristo Rey (indicador de red, no resultados de esta escuela)
+
+Estas cifras describen a todas las escuelas de la red Cristo Rey en Estados Unidos. Las publica la propia red y no son resultados de la escuela de Seattle. Las comparamos con la distribución pública solo como referencia.
+
+```{r}
+#| column: page-inset-right
+priv_table("cristo_rey")
+```
+
+- **Inscripción.** 74 % de la clase 2022 de la red se inscribió en una universidad de 4 años dentro del primer año tras graduarse; 13 % lo hizo en una de 2 años.
+- **Licenciatura en 6 años.** 40 % de la clase 2017 de la red terminó una licenciatura en ese plazo. Eso queda por encima de 14 de las 15 escuelas públicas si se toma a todos los estudiantes, pero por debajo de todas si se toma solo a los de GPA ≥ 3.0.
+- **Población distinta.** La red atiende por diseño a familias de bajos ingresos, así que el grupo público más parecido no es el de GPA ≥ 3.0. La cifra de 87 % de inscripción no indica cohorte.
+
+### Cifras privadas frente a la distribución pública
+
+```{r}
+#| label: fig-private
+#| fig-cap: "Cada rombo es una cifra documentada por una escuela privada (o por la red Cristo Rey); los círculos son las 15 escuelas públicas. No es un ranking: las definiciones y las cohortes difieren."
+#| fig-height: 7
+if (file.exists(here("output", "figures", "private_vs_public.rds"))) print(read_rds(here("output", "figures", "private_vs_public.rds")))
+```
+
+### Cifras publicadas que no son comparables
+
+```{r}
+#| column: page-inset-right
+priv_nc %>%
+  mutate(is_list = str_detect(reason_es, "Lista sin conteos")) %>%
+  group_by(school_name, is_list) %>%
+  group_modify(~ if (.y$is_list) tibble(metric_raw = paste0("Lista de ", nrow(.x), " instituciones de matriculación (", first(.x$cohort), ")"),
+                                         value = NA_real_, cohort = first(.x$cohort), source = first(.x$source),
+                                         source_type = first(.x$source_type), reason_es = "Solo nombres, sin conteos ni tamaño de clase") else .x) %>%
+  ungroup() %>%
+  transmute(Escuela = school_name, Cifra = metric_raw, Valor = if_else(is.na(value), "—", fmt_pct(value)),
+            Cohorte = coalesce(cohort, "no indicada"), `Por qué no es comparable` = reason_es, Documento = source) %>%
+  gt(groupname_col = "Escuela") %>%
+  tab_options(table.font.size = px(11), data_row.padding = px(1))
+```
+
+### Problemas de comparabilidad (resumen)
+
+- **Admisiones frente a inscripciones.** "100 % admitidos" o "más de 200 universidades" cuentan cartas de aceptación, no estudiantes inscritos. ERDC solo mide inscripción real.
+- **Datos autoinformados.** Ninguna cifra privada viene de un informe del National Student Clearinghouse. Todas las publica la escuela o la red, sin verificación externa.
+- **Denominadores faltantes o distintos.** Bellarmine no da denominador. Holy Names da el tamaño de la clase, pero no conteos por universidad. Las cifras de la red Cristo Rey no indican cuántos graduados incluyen.
+- **Cohortes distintas.** Las cifras privadas cubren las clases 2017–2025, mientras que las públicas agrupan 2009–2018 (títulos) o 2015–2024 (inscripción). Por eso también mostramos la distribución pública de la misma cohorte cuando existe.
+- **Momento de la medición.** ERDC mide la inscripción en cualquier momento del primer año. Las escuelas privadas no indican cuándo midieron; la red Cristo Rey dice "dentro de un año".
+- **Selección.** Las escuelas privadas eligen a sus estudiantes por admisión y colegiatura. Cristo Rey, además, solo admite a familias por debajo de un límite de ingreso. El grupo público de GPA ≥ 3.0 no es equivalente al alumnado de ninguna de ellas.
+
+## Advertencias
+
+- **Selección, no efecto escolar.** Las escuelas difieren en quién las atiende: ingreso familiar, preparación al llegar, idioma y expectativas. Comparar solo a estudiantes con GPA ≥ 3.0 reduce el problema, pero no lo elimina. El corte es grueso, cada escuela califica distinto y, dentro del grupo de GPA ≥ 3.0, una escuela puede tener más estudiantes con 3.9 que otra.
+- **Descriptivo, no causal.** Nada de esto estima cuánto cambiaría el resultado de un mismo estudiante si fuera a otra escuela.
+- **Composición escolar.** Con indicadores de composición (porcentaje con almuerzo gratuito o reducido, puntajes de exámenes estatales de 8.º grado, porcentaje en AP/IB/Running Start), se podría ajustar por las características de cada escuela. Esos datos existen en el Report Card de OSPI, pero no se usaron aquí. Es probable que ajustar redujera la ventaja de las escuelas con más estudiantes con GPA ≥ 3.0 (Tahoma, Kentridge, Sumner) y la desventaja de las que tienen menos (Auburn HS, Kent-Meridian).
+- **Sin conteos de estudiantes.** ERDC no publica cuántos estudiantes hay en cada celda. Los intervalos se basan en la variación entre cohortes, no en el tamaño de la muestra.
+- **Desfase temporal.** Los títulos en 6 años corresponden a quienes se graduaron entre 2009 y 2018, y los ingresos agrupan cohortes todavía más antiguas. Las escuelas cambian (directores, programas, límites de asistencia), y Kent Laboratory Academy y TAFA son demasiado nuevas para evaluarlas.
+- **Solo escuelas públicas en el ranking.** ERDC no incluye escuelas privadas. Las tres escuelas privadas aparecen [aparte](#privadas), con cifras que publican ellas mismas y que no son comparables uno a uno.
+- **Universidades.** Solo se nombran las ~8 instituciones más comunes por escuela, así que la inscripción en universidades selectivas fuera de UW no se puede medir. Además, UW agrupa sus tres campus.
+- **COVID.** Las cohortes de 2020 y 2021 se incluyen. Excluirlas casi no cambia los rankings ([apéndice](#sensibilidad)).
+
+## Cómo usar este informe
+
+1. **Úselo para descartar extremos, no para ordenar con precisión.** Las escuelas marcadas con ≈ son, para efectos prácticos, equivalentes en ese indicador. Una diferencia de 2 o 3 puntos no debería decidir nada.
+2. **Mire el panel de GPA ≥ 3.0.** Describe mejor a un estudiante fuerte. Aun así, en ninguna escuela el grupo de GPA ≥ 3.0 es tan selecto como "los mejores estudiantes".
+3. **Para un estudiante motivado, la oferta académica puede pesar más que estos promedios:**
+   - cursos AP o IB y hasta qué nivel de matemáticas se puede llegar (cálculo, estadística, cursos posteriores a cálculo);
+   - si es factible combinar Running Start con Green River College (horarios, transporte, política de la escuela);
+   - programas especiales y clubes.
+4. **Factores prácticos:** el tiempo de traslado, si se puede asistir a una escuela fuera del área de asignación (*transferencias entre distritos*), y el ambiente y la adaptación del estudiante. Visitar la escuela y hablar con estudiantes actuales ayuda.
+5. **Pregunte directamente a cada escuela** cuántos estudiantes toman AP Calculus BC o tienen éxito en exámenes IB, y a qué universidades fueron sus mejores estudiantes recientes. Estos datos no pueden responder esas preguntas.
+
+## Apéndice {#apendice}
+
+### Clasificación de escuelas
+
+```{r}
+classif %>%
+  filter(school_type %in% c("comprehensive", "choice", "excluded")) %>%
+  mutate(tipo = recode(school_type, comprehensive = "Comprehensiva (en el ranking)",
+                       choice = "Por elección (fuera del ranking)", excluded = "Alternativa / en línea / transición (excluida)")) %>%
+  select(tipo, district, school, first_cohort, last_cohort) %>%
+  gt(groupname_col = "tipo") %>%
+  cols_label(district = "Distrito", school = "Escuela (nombre en ERDC)", first_cohort = "Primera cohorte", last_cohort = "Última cohorte") %>%
+  tab_options(table.font.size = px(12))
+```
+
+### Sensibilidad {#sensibilidad}
+
+```{r}
+bind_rows(
+  enr_rho %>% transmute(Indicador = "Inscripción 4 años", Grupo = group, `Todas las cohortes (2005–2024)` = rho_all_cohorts, `Sin cohortes COVID (2020–21)` = rho_no_covid),
+  comp_sens %>% filter(group %in% c("all", "gpa_hi")) %>% group_by(group) %>%
+    summarise(rho = cor(rank_eb_main, rank_eb_all, method = "spearman", use = "complete.obs")) %>%
+    transmute(Indicador = "Licenciatura 6 años", Grupo = group, `Todas las cohortes (2005–2024)` = rho, `Sin cohortes COVID (2020–21)` = NA),
+  pers_sens %>% filter(group %in% c("all", "gpa_hi"), school_type == "comprehensive") %>% group_by(group) %>%
+    summarise(m = cor(rank_eb_main, rank_eb_midpoint, method = "spearman", use = "complete.obs"),
+              l = cor(rank_eb_main, rank_eb_lower, method = "spearman", use = "complete.obs")) %>%
+    transmute(Indicador = "Persistencia 4 años: celdas suprimidas = punto medio / límite inferior", Grupo = group,
+              `Todas las cohortes (2005–2024)` = m, `Sin cohortes COVID (2020–21)` = l)
+) %>%
+  mutate(Grupo = recode(Grupo, all = "Todos", gpa_hi = "GPA ≥ 3.0")) %>%
+  gt() %>%
+  fmt_number(where(is.numeric), decimals = 2) %>%
+  sub_missing(missing_text = "—") %>%
+  tab_header("Correlación de rangos (Spearman) con el ranking principal") %>%
+  tab_source_note("En la fila de persistencia, las dos columnas corresponden a rellenar las celdas suprimidas con el punto medio y con el límite inferior del rango publicado.") %>%
+  tab_options(table.font.size = px(13))
+```
+
+### Datos suprimidos en persistencia (GPA ≥ 3.0)
+
+```{r}
+pers_cov %>%
+  filter(group == "gpa_hi") %>%
+  select(school_label, n_expected, n_present, n_suppressed, n_absent) %>%
+  arrange(desc(n_absent), desc(n_suppressed)) %>%
+  gt() %>%
+  cols_label(school_label = "Escuela", n_expected = "Cohortes esperadas", n_present = "Publicadas",
+             n_suppressed = "Suprimidas", n_absent = "Ausentes del archivo") %>%
+  tab_options(table.font.size = px(12))
+```
+
+*Código y datos procesados: scripts en R (`script/01_clean.R` a `script/07_compare.R`). Los archivos originales se descargan del tablero High School Graduate Outcomes de ERDC.*

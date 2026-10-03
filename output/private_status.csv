@@ -1,0 +1,4 @@
+school_id,school_name,folder,n_docs,has_docs,n_rows,n_qual
+bellarmine,Bellarmine Preparatory School,bellarmine,16,1,9,10
+holy_names,Holy Names Academy,holy_names,12,1,197,9
+cristo_rey,Cristo Rey Jesuit Seattle High School,cristo_rey,19,1,10,17

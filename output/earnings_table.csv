@@ -1,0 +1,97 @@
+school_label,district,school_type,group,credential,years_after,median_earnings,n_workers,ratio_to_state
+Thomas Jefferson,Federal Way,comprehensive,all,Bachelor's or Higher,10,78400,791,1.1216022889842632
+Kentridge,Kent,comprehensive,all,Bachelor's or Higher,10,78000,1238,1.1158798283261802
+Kentlake,Kent,comprehensive,all,Bachelor's or Higher,10,77900,726,1.1144492131616595
+Tahoma,Tahoma,comprehensive,all,Bachelor's or Higher,10,77800,1070,1.1130185979971388
+Auburn Mountainview,Auburn,comprehensive,all,Bachelor's or Higher,10,76300,410,1.0915593705293276
+Kentwood,Kent,comprehensive,all,Bachelor's or Higher,10,75300,1012,1.0772532188841202
+Todd Beamer,Federal Way,comprehensive,all,Bachelor's or Higher,10,74500,619,1.0658082975679541
+Auburn Riverside,Auburn,comprehensive,all,Bachelor's or Higher,10,73900,744,1.0572246065808297
+Decatur,Federal Way,comprehensive,all,Bachelor's or Higher,10,72800,594,1.0414878397711016
+Auburn HS,Auburn,comprehensive,all,Bachelor's or Higher,10,72600,499,1.03862660944206
+Federal Way HS,Federal Way,comprehensive,all,Bachelor's or Higher,10,70800,483,1.0128755364806867
+Bonney Lake,Sumner,comprehensive,all,Bachelor's or Higher,10,70500,335,1.0085836909871244
+Washington (estatal),Statewide,state,all,Bachelor's or Higher,10,69900,102190,1
+Sumner,Sumner,comprehensive,all,Bachelor's or Higher,10,68300,488,0.977110157367668
+Enumclaw,Enumclaw,comprehensive,all,Bachelor's or Higher,10,68200,591,0.9756795422031473
+Kent-Meridian,Kent,comprehensive,all,Bachelor's or Higher,10,67000,460,0.9585121602288984
+Auburn Mountainview,Auburn,comprehensive,gpa_hi,Bachelor's or Higher,10,80500,339,1.1211699164345403
+Thomas Jefferson,Federal Way,comprehensive,gpa_hi,Bachelor's or Higher,10,80300,663,1.1183844011142061
+Kentridge,Kent,comprehensive,gpa_hi,Bachelor's or Higher,10,80300,922,1.1183844011142061
+Tahoma,Tahoma,comprehensive,gpa_hi,Bachelor's or Higher,10,79500,885,1.107242339832869
+Kentlake,Kent,comprehensive,gpa_hi,Bachelor's or Higher,10,79300,540,1.1044568245125348
+Kentwood,Kent,comprehensive,gpa_hi,Bachelor's or Higher,10,77000,674,1.0724233983286908
+Decatur,Federal Way,comprehensive,gpa_hi,Bachelor's or Higher,10,75400,459,1.0501392757660166
+Todd Beamer,Federal Way,comprehensive,gpa_hi,Bachelor's or Higher,10,74600,541,1.0389972144846797
+Auburn Riverside,Auburn,comprehensive,gpa_hi,Bachelor's or Higher,10,74100,645,1.032033426183844
+Auburn HS,Auburn,comprehensive,gpa_hi,Bachelor's or Higher,10,73800,420,1.0278551532033426
+Washington (estatal),Statewide,state,gpa_hi,Bachelor's or Higher,10,71800,82588,1
+Federal Way HS,Federal Way,comprehensive,gpa_hi,Bachelor's or Higher,10,71700,408,0.9986072423398329
+Bonney Lake,Sumner,comprehensive,gpa_hi,Bachelor's or Higher,10,70500,285,0.9818941504178273
+Kent-Meridian,Kent,comprehensive,gpa_hi,Bachelor's or Higher,10,68800,289,0.958217270194986
+Enumclaw,Enumclaw,comprehensive,gpa_hi,Bachelor's or Higher,10,68200,455,0.9498607242339833
+Sumner,Sumner,comprehensive,gpa_hi,Bachelor's or Higher,10,68100,421,0.9484679665738162
+Kentlake,Kent,comprehensive,all,HS Diploma,5,37700,1276,1.2360655737704918
+Enumclaw,Enumclaw,comprehensive,all,HS Diploma,5,36900,1540,1.2098360655737705
+Bonney Lake,Sumner,comprehensive,all,HS Diploma,5,36700,1340,1.20327868852459
+Kentwood,Kent,comprehensive,all,HS Diploma,5,36000,1474,1.180327868852459
+Tahoma,Tahoma,comprehensive,all,HS Diploma,5,35800,1908,1.1737704918032787
+Auburn Mountainview,Auburn,comprehensive,all,HS Diploma,5,35200,1186,1.1540983606557378
+Auburn HS,Auburn,comprehensive,all,HS Diploma,5,35200,1803,1.1540983606557378
+Sumner,Sumner,comprehensive,all,HS Diploma,5,35200,1723,1.1540983606557378
+Auburn Riverside,Auburn,comprehensive,all,HS Diploma,5,34500,1708,1.1311475409836065
+Kentridge,Kent,comprehensive,all,HS Diploma,5,34400,1345,1.1278688524590164
+Decatur,Federal Way,comprehensive,all,HS Diploma,5,34000,1210,1.1147540983606556
+Thomas Jefferson,Federal Way,comprehensive,all,HS Diploma,5,33800,1529,1.1081967213114754
+Todd Beamer,Federal Way,comprehensive,all,HS Diploma,5,32600,1548,1.0688524590163935
+Kent-Meridian,Kent,comprehensive,all,HS Diploma,5,32400,1502,1.062295081967213
+Federal Way HS,Federal Way,comprehensive,all,HS Diploma,5,31700,1636,1.039344262295082
+Washington (estatal),Statewide,state,all,HS Diploma,5,30500,299604,1
+Enumclaw,Enumclaw,comprehensive,gpa_hi,HS Diploma,5,38600,384,1.2176656151419558
+Todd Beamer,Federal Way,comprehensive,gpa_hi,HS Diploma,5,38500,516,1.2145110410094637
+Kentwood,Kent,comprehensive,gpa_hi,HS Diploma,5,36800,230,1.160883280757098
+Bonney Lake,Sumner,comprehensive,gpa_hi,HS Diploma,5,36600,312,1.1545741324921135
+Kentlake,Kent,comprehensive,gpa_hi,HS Diploma,5,36400,228,1.1482649842271293
+Auburn HS,Auburn,comprehensive,gpa_hi,HS Diploma,5,36300,378,1.1451104100946372
+Auburn Riverside,Auburn,comprehensive,gpa_hi,HS Diploma,5,36000,429,1.135646687697161
+Sumner,Sumner,comprehensive,gpa_hi,HS Diploma,5,35800,470,1.1293375394321767
+Thomas Jefferson,Federal Way,comprehensive,gpa_hi,HS Diploma,5,35500,394,1.1198738170347002
+Decatur,Federal Way,comprehensive,gpa_hi,HS Diploma,5,35000,328,1.1041009463722398
+Tahoma,Tahoma,comprehensive,gpa_hi,HS Diploma,5,35000,488,1.1041009463722398
+Kentridge,Kent,comprehensive,gpa_hi,HS Diploma,5,34900,303,1.1009463722397477
+Federal Way HS,Federal Way,comprehensive,gpa_hi,HS Diploma,5,34700,440,1.0946372239747635
+Auburn Mountainview,Auburn,comprehensive,gpa_hi,HS Diploma,5,34200,272,1.0788643533123028
+Kent-Meridian,Kent,comprehensive,gpa_hi,HS Diploma,5,32900,265,1.0378548895899053
+Washington (estatal),Statewide,state,gpa_hi,HS Diploma,5,31700,68984,1
+Enumclaw,Enumclaw,comprehensive,all,HS Diploma,10,52500,897,1.2352941176470589
+Kentlake,Kent,comprehensive,all,HS Diploma,10,52400,787,1.2329411764705882
+Tahoma,Tahoma,comprehensive,all,HS Diploma,10,50800,1112,1.1952941176470588
+Kentwood,Kent,comprehensive,all,HS Diploma,10,50300,941,1.183529411764706
+Sumner,Sumner,comprehensive,all,HS Diploma,10,49600,1018,1.1670588235294117
+Bonney Lake,Sumner,comprehensive,all,HS Diploma,10,49100,715,1.1552941176470588
+Kentridge,Kent,comprehensive,all,HS Diploma,10,48900,906,1.1505882352941177
+Thomas Jefferson,Federal Way,comprehensive,all,HS Diploma,10,48000,864,1.1294117647058823
+Decatur,Federal Way,comprehensive,all,HS Diploma,10,47900,715,1.1270588235294117
+Auburn Riverside,Auburn,comprehensive,all,HS Diploma,10,47800,1062,1.1247058823529412
+Todd Beamer,Federal Way,comprehensive,all,HS Diploma,10,47700,848,1.1223529411764706
+Auburn Mountainview,Auburn,comprehensive,all,HS Diploma,10,47100,639,1.108235294117647
+Auburn HS,Auburn,comprehensive,all,HS Diploma,10,47000,1116,1.1058823529411765
+Federal Way HS,Federal Way,comprehensive,all,HS Diploma,10,44200,951,1.04
+Kent-Meridian,Kent,comprehensive,all,HS Diploma,10,43800,888,1.0305882352941176
+Washington (estatal),Statewide,state,all,HS Diploma,10,42500,174899,1
+Kentlake,Kent,comprehensive,gpa_hi,HS Diploma,10,59100,132,1.3133333333333332
+Kentridge,Kent,comprehensive,gpa_hi,HS Diploma,10,56100,216,1.2466666666666666
+Tahoma,Tahoma,comprehensive,gpa_hi,HS Diploma,10,53500,280,1.1888888888888889
+Auburn Riverside,Auburn,comprehensive,gpa_hi,HS Diploma,10,53200,289,1.1822222222222223
+Bonney Lake,Sumner,comprehensive,gpa_hi,HS Diploma,10,53000,159,1.1777777777777778
+Enumclaw,Enumclaw,comprehensive,gpa_hi,HS Diploma,10,52000,224,1.1555555555555554
+Kentwood,Kent,comprehensive,gpa_hi,HS Diploma,10,51200,158,1.1377777777777778
+Decatur,Federal Way,comprehensive,gpa_hi,HS Diploma,10,51100,190,1.1355555555555557
+Thomas Jefferson,Federal Way,comprehensive,gpa_hi,HS Diploma,10,51100,223,1.1355555555555557
+Auburn HS,Auburn,comprehensive,gpa_hi,HS Diploma,10,50800,257,1.1288888888888888
+Todd Beamer,Federal Way,comprehensive,gpa_hi,HS Diploma,10,50600,298,1.1244444444444444
+Auburn Mountainview,Auburn,comprehensive,gpa_hi,HS Diploma,10,49400,150,1.0977777777777777
+Sumner,Sumner,comprehensive,gpa_hi,HS Diploma,10,48800,264,1.0844444444444445
+Washington (estatal),Statewide,state,gpa_hi,HS Diploma,10,45000,40102,1
+Federal Way HS,Federal Way,comprehensive,gpa_hi,HS Diploma,10,44400,230,0.9866666666666667
+Kent-Meridian,Kent,comprehensive,gpa_hi,HS Diploma,10,43900,171,0.9755555555555555

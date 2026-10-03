@@ -1,0 +1,470 @@
+outcome,group,school_label,school_type,cohorts,cohort_span,n_obs,n_supp
+enr_4yr,all,Kentridge,comprehensive,2015–2024,1,10,0
+enr_4yr,all,Tahoma,comprehensive,2015–2024,1,10,0
+enr_4yr,all,Sumner,comprehensive,2015–2024,1,10,0
+enr_4yr,all,Kentwood,comprehensive,2015–2024,1,10,0
+enr_4yr,all,Thomas Jefferson,comprehensive,2015–2024,1,10,0
+enr_4yr,all,Auburn Mountainview,comprehensive,2015–2024,1,10,0
+enr_4yr,all,Auburn Riverside,comprehensive,2015–2024,1,10,0
+enr_4yr,all,Decatur,comprehensive,2015–2024,1,10,0
+enr_4yr,all,Todd Beamer,comprehensive,2015–2024,1,10,0
+enr_4yr,all,Federal Way HS,comprehensive,2015–2024,1,10,0
+enr_4yr,all,Bonney Lake,comprehensive,2015–2024,1,10,0
+enr_4yr,all,Kentlake,comprehensive,2015–2024,1,10,0
+enr_4yr,all,Enumclaw,comprehensive,2015–2024,1,10,0
+enr_4yr,all,Kent-Meridian,comprehensive,2015–2024,1,10,0
+enr_4yr,all,Auburn HS,comprehensive,2015–2024,1,10,0
+enr_4yr,all,TAFA at Saghalie,choice,2013–2023,3,7,1
+enr_4yr,all,Kent Laboratory Academy,choice,2022–2024,1,3,0
+enr_4yr,gpa_hi,Kentridge,comprehensive,2013–2024,3,4,0
+enr_4yr,gpa_hi,Tahoma,comprehensive,2015–2024,1,10,0
+enr_4yr,gpa_hi,Kentwood,comprehensive,2013–2024,3,4,0
+enr_4yr,gpa_hi,Sumner,comprehensive,2015–2024,1,10,0
+enr_4yr,gpa_hi,Auburn Riverside,comprehensive,2015–2024,1,10,0
+enr_4yr,gpa_hi,Thomas Jefferson,comprehensive,2015–2024,1,10,0
+enr_4yr,gpa_hi,Auburn Mountainview,comprehensive,2015–2024,1,10,0
+enr_4yr,gpa_hi,Federal Way HS,comprehensive,2015–2024,1,10,0
+enr_4yr,gpa_hi,Decatur,comprehensive,2015–2024,1,10,0
+enr_4yr,gpa_hi,Kentlake,comprehensive,2013–2024,3,4,0
+enr_4yr,gpa_hi,Enumclaw,comprehensive,2013–2024,3,4,0
+enr_4yr,gpa_hi,Kent-Meridian,comprehensive,2013–2024,3,4,0
+enr_4yr,gpa_hi,Bonney Lake,comprehensive,2015–2024,1,10,0
+enr_4yr,gpa_hi,Todd Beamer,comprehensive,2015–2024,1,10,0
+enr_4yr,gpa_hi,Auburn HS,comprehensive,2015–2024,1,10,0
+enr_4yr,gpa_hi,TAFA at Saghalie,choice,2019–2024,3,2,0
+enr_4yr,gpa_hi,Kent Laboratory Academy,choice,2022–2024,3,1,0
+enr_4yr,gpa_lo,Tahoma,comprehensive,2015–2024,1,10,0
+enr_4yr,gpa_lo,Kentwood,comprehensive,2013–2024,3,4,0
+enr_4yr,gpa_lo,Kentridge,comprehensive,2013–2024,3,4,0
+enr_4yr,gpa_lo,Sumner,comprehensive,2015–2024,1,10,0
+enr_4yr,gpa_lo,Todd Beamer,comprehensive,2015–2024,1,9,1
+enr_4yr,gpa_lo,Thomas Jefferson,comprehensive,2015–2024,1,10,0
+enr_4yr,gpa_lo,Kentlake,comprehensive,2013–2024,3,4,0
+enr_4yr,gpa_lo,Decatur,comprehensive,2015–2024,1,10,0
+enr_4yr,gpa_lo,Federal Way HS,comprehensive,2015–2024,1,10,0
+enr_4yr,gpa_lo,Auburn Mountainview,comprehensive,2015–2024,1,10,0
+enr_4yr,gpa_lo,Auburn Riverside,comprehensive,2015–2024,1,10,0
+enr_4yr,gpa_lo,Kent-Meridian,comprehensive,2013–2024,3,4,0
+enr_4yr,gpa_lo,Bonney Lake,comprehensive,2015–2024,1,10,0
+enr_4yr,gpa_lo,Enumclaw,comprehensive,2013–2024,3,4,0
+enr_4yr,gpa_lo,Auburn HS,comprehensive,2015–2024,1,10,0
+enr_4yr,gpa_lo,TAFA at Saghalie,choice,2019–2024,3,2,0
+enr_4yr,gpa_lo,Kent Laboratory Academy,choice,2022–2024,3,1,0
+enr_any,all,Kentridge,comprehensive,2015–2024,1,10,0
+enr_any,all,Kentwood,comprehensive,2015–2024,1,10,0
+enr_any,all,Tahoma,comprehensive,2015–2024,1,10,0
+enr_any,all,Auburn Mountainview,comprehensive,2015–2024,1,10,0
+enr_any,all,Kentlake,comprehensive,2015–2024,1,10,0
+enr_any,all,Auburn Riverside,comprehensive,2015–2024,1,10,0
+enr_any,all,Thomas Jefferson,comprehensive,2015–2024,1,10,0
+enr_any,all,Sumner,comprehensive,2015–2024,1,10,0
+enr_any,all,Todd Beamer,comprehensive,2015–2024,1,10,0
+enr_any,all,Kent-Meridian,comprehensive,2015–2024,1,10,0
+enr_any,all,Decatur,comprehensive,2015–2024,1,10,0
+enr_any,all,Federal Way HS,comprehensive,2015–2024,1,10,0
+enr_any,all,Bonney Lake,comprehensive,2015–2024,1,10,0
+enr_any,all,Enumclaw,comprehensive,2015–2024,1,10,0
+enr_any,all,Auburn HS,comprehensive,2015–2024,1,10,0
+enr_any,all,TAFA at Saghalie,choice,2013–2023,3,7,1
+enr_any,all,Kent Laboratory Academy,choice,2022–2024,1,3,0
+enr_any,gpa_hi,Kentridge,comprehensive,2013–2024,3,4,0
+enr_any,gpa_hi,Kentwood,comprehensive,2013–2024,3,4,0
+enr_any,gpa_hi,Kentlake,comprehensive,2013–2024,3,4,0
+enr_any,gpa_hi,Auburn Mountainview,comprehensive,2015–2024,1,10,0
+enr_any,gpa_hi,Tahoma,comprehensive,2015–2024,1,10,0
+enr_any,gpa_hi,Auburn Riverside,comprehensive,2015–2024,1,10,0
+enr_any,gpa_hi,Kent-Meridian,comprehensive,2013–2024,3,4,0
+enr_any,gpa_hi,Thomas Jefferson,comprehensive,2015–2024,1,10,0
+enr_any,gpa_hi,Todd Beamer,comprehensive,2015–2024,1,10,0
+enr_any,gpa_hi,Bonney Lake,comprehensive,2015–2024,1,10,0
+enr_any,gpa_hi,Sumner,comprehensive,2015–2024,1,10,0
+enr_any,gpa_hi,Decatur,comprehensive,2015–2024,1,10,0
+enr_any,gpa_hi,Federal Way HS,comprehensive,2015–2024,1,10,0
+enr_any,gpa_hi,Enumclaw,comprehensive,2013–2024,3,4,0
+enr_any,gpa_hi,Auburn HS,comprehensive,2015–2024,1,10,0
+enr_any,gpa_hi,TAFA at Saghalie,choice,2019–2024,3,2,0
+enr_any,gpa_hi,Kent Laboratory Academy,choice,2022–2024,3,1,0
+enr_any,gpa_lo,Kentridge,comprehensive,2013–2024,3,4,0
+enr_any,gpa_lo,Kentwood,comprehensive,2013–2024,3,4,0
+enr_any,gpa_lo,Tahoma,comprehensive,2015–2024,1,10,0
+enr_any,gpa_lo,Kentlake,comprehensive,2013–2024,3,4,0
+enr_any,gpa_lo,Kent-Meridian,comprehensive,2013–2024,3,4,0
+enr_any,gpa_lo,Auburn Mountainview,comprehensive,2015–2024,1,10,0
+enr_any,gpa_lo,Auburn Riverside,comprehensive,2015–2024,1,10,0
+enr_any,gpa_lo,Todd Beamer,comprehensive,2015–2024,1,9,1
+enr_any,gpa_lo,Decatur,comprehensive,2015–2024,1,10,0
+enr_any,gpa_lo,Thomas Jefferson,comprehensive,2015–2024,1,10,0
+enr_any,gpa_lo,Sumner,comprehensive,2015–2024,1,10,0
+enr_any,gpa_lo,Federal Way HS,comprehensive,2015–2024,1,10,0
+enr_any,gpa_lo,Auburn HS,comprehensive,2015–2024,1,10,0
+enr_any,gpa_lo,Enumclaw,comprehensive,2013–2024,3,4,0
+enr_any,gpa_lo,Bonney Lake,comprehensive,2015–2024,1,10,0
+enr_any,gpa_lo,TAFA at Saghalie,choice,2019–2024,3,2,0
+enr_any,gpa_lo,Kent Laboratory Academy,choice,2022–2024,3,1,0
+enr_2yr,all,Kentlake,comprehensive,2015–2024,1,10,0
+enr_2yr,all,Kentwood,comprehensive,2015–2024,1,10,0
+enr_2yr,all,Auburn Mountainview,comprehensive,2015–2024,1,10,0
+enr_2yr,all,Kent-Meridian,comprehensive,2015–2024,1,10,0
+enr_2yr,all,Kentridge,comprehensive,2015–2024,1,10,0
+enr_2yr,all,Auburn Riverside,comprehensive,2015–2024,1,10,0
+enr_2yr,all,Todd Beamer,comprehensive,2015–2024,1,10,0
+enr_2yr,all,Tahoma,comprehensive,2015–2024,1,10,0
+enr_2yr,all,Auburn HS,comprehensive,2015–2024,1,10,0
+enr_2yr,all,Decatur,comprehensive,2015–2024,1,10,0
+enr_2yr,all,Thomas Jefferson,comprehensive,2015–2024,1,10,0
+enr_2yr,all,Bonney Lake,comprehensive,2015–2024,1,10,0
+enr_2yr,all,Federal Way HS,comprehensive,2015–2024,1,10,0
+enr_2yr,all,Enumclaw,comprehensive,2015–2024,1,10,0
+enr_2yr,all,Sumner,comprehensive,2015–2024,1,10,0
+enr_2yr,all,TAFA at Saghalie,choice,2013–2023,3,7,1
+enr_2yr,all,Kent Laboratory Academy,choice,2022–2024,1,3,0
+enr_2yr,gpa_hi,Kentlake,comprehensive,2013–2024,3,4,0
+enr_2yr,gpa_hi,Auburn Mountainview,comprehensive,2015–2024,1,10,0
+enr_2yr,gpa_hi,Kent-Meridian,comprehensive,2013–2024,3,4,0
+enr_2yr,gpa_hi,Bonney Lake,comprehensive,2015–2024,1,10,0
+enr_2yr,gpa_hi,Todd Beamer,comprehensive,2015–2024,1,10,0
+enr_2yr,gpa_hi,Auburn HS,comprehensive,2015–2024,1,10,0
+enr_2yr,gpa_hi,Auburn Riverside,comprehensive,2015–2024,1,10,0
+enr_2yr,gpa_hi,Kentwood,comprehensive,2013–2024,3,4,0
+enr_2yr,gpa_hi,Decatur,comprehensive,2015–2024,1,10,0
+enr_2yr,gpa_hi,Thomas Jefferson,comprehensive,2015–2024,1,10,0
+enr_2yr,gpa_hi,Federal Way HS,comprehensive,2015–2024,1,10,0
+enr_2yr,gpa_hi,Kentridge,comprehensive,2013–2024,3,4,0
+enr_2yr,gpa_hi,Enumclaw,comprehensive,2013–2024,3,4,0
+enr_2yr,gpa_hi,Tahoma,comprehensive,2015–2024,1,10,0
+enr_2yr,gpa_hi,Sumner,comprehensive,2015–2024,1,10,0
+enr_2yr,gpa_hi,TAFA at Saghalie,choice,2019–2024,3,2,0
+enr_2yr,gpa_hi,Kent Laboratory Academy,choice,2022–2024,3,1,0
+enr_2yr,gpa_lo,Kentridge,comprehensive,2013–2024,3,4,0
+enr_2yr,gpa_lo,Kentwood,comprehensive,2013–2024,3,4,0
+enr_2yr,gpa_lo,Kentlake,comprehensive,2013–2024,3,4,0
+enr_2yr,gpa_lo,Kent-Meridian,comprehensive,2013–2024,3,4,0
+enr_2yr,gpa_lo,Auburn Mountainview,comprehensive,2015–2024,1,10,0
+enr_2yr,gpa_lo,Tahoma,comprehensive,2015–2024,1,10,0
+enr_2yr,gpa_lo,Auburn Riverside,comprehensive,2015–2024,1,10,0
+enr_2yr,gpa_lo,Todd Beamer,comprehensive,2015–2024,1,9,1
+enr_2yr,gpa_lo,Decatur,comprehensive,2015–2024,1,10,0
+enr_2yr,gpa_lo,Auburn HS,comprehensive,2015–2024,1,10,0
+enr_2yr,gpa_lo,Thomas Jefferson,comprehensive,2015–2024,1,10,0
+enr_2yr,gpa_lo,Sumner,comprehensive,2015–2024,1,10,0
+enr_2yr,gpa_lo,Federal Way HS,comprehensive,2015–2024,1,10,0
+enr_2yr,gpa_lo,Enumclaw,comprehensive,2013–2024,3,4,0
+enr_2yr,gpa_lo,Bonney Lake,comprehensive,2015–2024,1,10,0
+enr_2yr,gpa_lo,TAFA at Saghalie,choice,2019–2024,3,2,0
+enr_2yr,gpa_lo,Kent Laboratory Academy,choice,2022–2024,3,1,0
+sel_uw,all,Kentridge,comprehensive,2015–2024,1,10,0
+sel_uw,all,Thomas Jefferson,comprehensive,2015–2024,1,10,0
+sel_uw,all,Kent-Meridian,comprehensive,2015–2024,1,10,0
+sel_uw,all,Todd Beamer,comprehensive,2015–2024,1,10,0
+sel_uw,all,Federal Way HS,comprehensive,2015–2024,1,10,0
+sel_uw,all,Kentwood,comprehensive,2015–2024,1,10,0
+sel_uw,all,Decatur,comprehensive,2015–2024,1,10,0
+sel_uw,all,Auburn Mountainview,comprehensive,2015–2024,1,10,0
+sel_uw,all,Auburn Riverside,comprehensive,2015–2024,1,10,0
+sel_uw,all,Kentlake,comprehensive,2015–2024,1,10,0
+sel_uw,all,Tahoma,comprehensive,2015–2024,1,10,0
+sel_uw,all,Auburn HS,comprehensive,2015–2024,1,10,0
+sel_uw,all,Bonney Lake,comprehensive,2015–2024,1,10,0
+sel_uw,all,Sumner,comprehensive,2015–2024,1,10,0
+sel_uw,all,Enumclaw,comprehensive,2015–2024,1,10,0
+sel_uw,all,TAFA at Saghalie,choice,2015–2023,1,9,1
+sel_uw,all,Kent Laboratory Academy,choice,NA,1,0,3
+sel_any,all,Kentridge,comprehensive,2015–2024,1,10,0
+sel_any,all,Thomas Jefferson,comprehensive,2015–2024,1,10,0
+sel_any,all,Kent-Meridian,comprehensive,2015–2024,1,10,0
+sel_any,all,Todd Beamer,comprehensive,2015–2024,1,10,0
+sel_any,all,Federal Way HS,comprehensive,2015–2024,1,10,0
+sel_any,all,Kentwood,comprehensive,2015–2024,1,10,0
+sel_any,all,Decatur,comprehensive,2015–2024,1,10,0
+sel_any,all,Auburn Mountainview,comprehensive,2015–2024,1,10,0
+sel_any,all,Auburn Riverside,comprehensive,2015–2024,1,10,0
+sel_any,all,Kentlake,comprehensive,2015–2024,1,10,0
+sel_any,all,Tahoma,comprehensive,2015–2024,1,10,0
+sel_any,all,Auburn HS,comprehensive,2015–2024,1,10,0
+sel_any,all,Bonney Lake,comprehensive,2015–2024,1,10,0
+sel_any,all,Sumner,comprehensive,2015–2024,1,10,0
+sel_any,all,Enumclaw,comprehensive,2015–2024,1,10,0
+sel_any,all,TAFA at Saghalie,choice,2015–2023,1,9,1
+sel_any,all,Kent Laboratory Academy,choice,NA,1,0,3
+sel_oos,all,Auburn Mountainview,comprehensive,2015–2024,1,10,0
+sel_oos,all,Auburn Riverside,comprehensive,2015–2024,1,10,0
+sel_oos,all,Auburn HS,comprehensive,2015–2024,1,10,0
+sel_oos,all,Enumclaw,comprehensive,2015–2024,1,10,0
+sel_oos,all,Decatur,comprehensive,2015–2024,1,10,0
+sel_oos,all,Federal Way HS,comprehensive,2015–2024,1,10,0
+sel_oos,all,TAFA at Saghalie,choice,2015–2023,1,9,1
+sel_oos,all,Thomas Jefferson,comprehensive,2015–2024,1,10,0
+sel_oos,all,Todd Beamer,comprehensive,2015–2024,1,10,0
+sel_oos,all,Kent Laboratory Academy,choice,NA,1,0,3
+sel_oos,all,Kent-Meridian,comprehensive,2015–2024,1,10,0
+sel_oos,all,Kentlake,comprehensive,2015–2024,1,10,0
+sel_oos,all,Kentridge,comprehensive,2015–2024,1,10,0
+sel_oos,all,Kentwood,comprehensive,2015–2024,1,10,0
+sel_oos,all,Bonney Lake,comprehensive,2015–2024,1,10,0
+sel_oos,all,Sumner,comprehensive,2015–2024,1,10,0
+sel_oos,all,Tahoma,comprehensive,2015–2024,1,10,0
+per_4yr,all,Kentridge,comprehensive,2014–2023,1,10,0
+per_4yr,all,Kentwood,comprehensive,2014–2023,1,10,0
+per_4yr,all,Tahoma,comprehensive,2014–2023,1,10,0
+per_4yr,all,Kent-Meridian,comprehensive,2014–2023,1,10,0
+per_4yr,all,Auburn Mountainview,comprehensive,2014–2023,1,10,0
+per_4yr,all,Auburn Riverside,comprehensive,2014–2023,1,10,0
+per_4yr,all,Sumner,comprehensive,2014–2023,1,10,0
+per_4yr,all,Thomas Jefferson,comprehensive,2014–2023,1,10,0
+per_4yr,all,Kentlake,comprehensive,2015–2023,1,9,1
+per_4yr,all,Todd Beamer,comprehensive,2014–2023,1,10,0
+per_4yr,all,Decatur,comprehensive,2014–2023,1,10,0
+per_4yr,all,Enumclaw,comprehensive,2014–2023,1,10,0
+per_4yr,all,Auburn HS,comprehensive,2014–2023,1,10,0
+per_4yr,all,Bonney Lake,comprehensive,2014–2023,1,10,0
+per_4yr,all,Federal Way HS,comprehensive,2014–2023,1,10,0
+per_4yr,gpa_hi,Kent-Meridian,comprehensive,2012–2023,3,4,0
+per_4yr,gpa_hi,Kentwood,comprehensive,2012–2023,3,4,0
+per_4yr,gpa_hi,Kentridge,comprehensive,2012–2023,3,4,0
+per_4yr,gpa_hi,Auburn Riverside,comprehensive,2014–2023,1,9,1
+per_4yr,gpa_hi,Tahoma,comprehensive,2014–2023,1,9,1
+per_4yr,gpa_hi,Sumner,comprehensive,2014–2023,1,10,0
+per_4yr,gpa_hi,Kentlake,comprehensive,2012–2023,3,4,0
+per_4yr,gpa_hi,Thomas Jefferson,comprehensive,2014–2022,1,8,2
+per_4yr,gpa_hi,Enumclaw,comprehensive,2012–2023,3,4,0
+per_4yr,gpa_hi,Bonney Lake,comprehensive,2014–2023,1,9,1
+per_4yr,gpa_hi,Auburn HS,comprehensive,2014–2023,1,8,2
+per_4yr,gpa_hi,Federal Way HS,comprehensive,2014–2023,1,10,0
+per_4yr,gpa_lo,Kentridge,comprehensive,2012–2023,3,4,0
+per_4yr,gpa_lo,Kentwood,comprehensive,2012–2023,3,4,0
+per_4yr,gpa_lo,Kent-Meridian,comprehensive,2012–2023,3,4,0
+per_4yr,gpa_lo,Tahoma,comprehensive,2015–2023,1,9,1
+per_4yr,gpa_lo,Kentlake,comprehensive,2012–2023,3,4,0
+per_4yr,gpa_lo,Sumner,comprehensive,2014–2023,1,10,0
+per_4yr,gpa_lo,Auburn Riverside,comprehensive,2014–2023,1,10,0
+per_4yr,gpa_lo,Enumclaw,comprehensive,2012–2023,3,4,0
+per_4yr,gpa_lo,Auburn HS,comprehensive,2015–2022,1,8,2
+per_4yr,gpa_lo,Thomas Jefferson,comprehensive,2014–2023,1,9,1
+per_4yr,gpa_lo,Bonney Lake,comprehensive,2014–2023,1,9,1
+per_4yr,gpa_lo,Federal Way HS,comprehensive,2014–2023,1,8,2
+ret_4yr,all,Kentridge,comprehensive,2014–2023,1,10,0
+ret_4yr,all,Kentwood,comprehensive,2014–2023,1,10,0
+ret_4yr,all,Tahoma,comprehensive,2014–2023,1,10,0
+ret_4yr,all,Auburn Mountainview,comprehensive,2014–2023,1,10,0
+ret_4yr,all,Kent-Meridian,comprehensive,2014–2023,1,10,0
+ret_4yr,all,Auburn Riverside,comprehensive,2014–2023,1,10,0
+ret_4yr,all,Thomas Jefferson,comprehensive,2014–2023,1,10,0
+ret_4yr,all,Kentlake,comprehensive,2014–2023,1,10,0
+ret_4yr,all,Todd Beamer,comprehensive,2014–2023,1,10,0
+ret_4yr,all,Enumclaw,comprehensive,2014–2023,1,10,0
+ret_4yr,all,Decatur,comprehensive,2014–2023,1,10,0
+ret_4yr,all,Sumner,comprehensive,2014–2023,1,10,0
+ret_4yr,all,Bonney Lake,comprehensive,2014–2023,1,10,0
+ret_4yr,all,Auburn HS,comprehensive,2014–2023,1,10,0
+ret_4yr,all,Federal Way HS,comprehensive,2014–2023,1,10,0
+ret_4yr,gpa_hi,Kentridge,comprehensive,2012–2023,3,4,0
+ret_4yr,gpa_hi,Kentwood,comprehensive,2012–2023,3,4,0
+ret_4yr,gpa_hi,Kent-Meridian,comprehensive,2012–2023,3,4,0
+ret_4yr,gpa_hi,Tahoma,comprehensive,2014–2023,1,10,0
+ret_4yr,gpa_hi,Auburn Riverside,comprehensive,2014–2023,1,10,0
+ret_4yr,gpa_hi,Thomas Jefferson,comprehensive,2014–2023,1,10,0
+ret_4yr,gpa_hi,Kentlake,comprehensive,2012–2023,3,4,0
+ret_4yr,gpa_hi,Enumclaw,comprehensive,2012–2023,3,4,0
+ret_4yr,gpa_hi,Auburn HS,comprehensive,2014–2023,1,10,0
+ret_4yr,gpa_hi,Sumner,comprehensive,2014–2023,1,10,0
+ret_4yr,gpa_hi,Bonney Lake,comprehensive,2014–2023,1,10,0
+ret_4yr,gpa_hi,Federal Way HS,comprehensive,2014–2023,1,10,0
+ret_4yr,gpa_lo,Kentwood,comprehensive,2012–2023,3,4,0
+ret_4yr,gpa_lo,Kentridge,comprehensive,2012–2023,3,4,0
+ret_4yr,gpa_lo,Tahoma,comprehensive,2014–2023,1,10,0
+ret_4yr,gpa_lo,Kent-Meridian,comprehensive,2012–2023,3,4,0
+ret_4yr,gpa_lo,Kentlake,comprehensive,2012–2023,3,4,0
+ret_4yr,gpa_lo,Auburn HS,comprehensive,2014–2022,1,9,1
+ret_4yr,gpa_lo,Enumclaw,comprehensive,2012–2023,3,4,0
+ret_4yr,gpa_lo,Sumner,comprehensive,2014–2023,1,10,0
+ret_4yr,gpa_lo,Auburn Riverside,comprehensive,2014–2023,1,10,0
+ret_4yr,gpa_lo,Bonney Lake,comprehensive,2014–2023,1,9,1
+ret_4yr,gpa_lo,Federal Way HS,comprehensive,2014–2023,1,9,1
+ret_4yr,gpa_lo,Thomas Jefferson,comprehensive,2014–2023,1,9,1
+per_2yr,all,Kentridge,comprehensive,2014–2023,1,10,0
+per_2yr,all,Kentwood,comprehensive,2014–2023,1,10,0
+per_2yr,all,Tahoma,comprehensive,2014–2023,1,10,0
+per_2yr,all,Auburn Mountainview,comprehensive,2014–2023,1,10,0
+per_2yr,all,Kentlake,comprehensive,2014–2023,1,10,0
+per_2yr,all,Auburn Riverside,comprehensive,2014–2023,1,10,0
+per_2yr,all,Bonney Lake,comprehensive,2014–2023,1,10,0
+per_2yr,all,Kent-Meridian,comprehensive,2014–2023,1,10,0
+per_2yr,all,Decatur,comprehensive,2014–2023,1,10,0
+per_2yr,all,Todd Beamer,comprehensive,2014–2023,1,10,0
+per_2yr,all,Thomas Jefferson,comprehensive,2014–2023,1,10,0
+per_2yr,all,Enumclaw,comprehensive,2014–2023,1,10,0
+per_2yr,all,Federal Way HS,comprehensive,2014–2023,1,10,0
+per_2yr,all,Auburn HS,comprehensive,2014–2023,1,10,0
+per_2yr,all,Sumner,comprehensive,2014–2023,1,10,0
+per_2yr,all,Kent Laboratory Academy,choice,2022–2023,1,2,0
+per_2yr,gpa_hi,Kentwood,comprehensive,2012–2023,3,4,0
+per_2yr,gpa_hi,Kentridge,comprehensive,2012–2023,3,4,0
+per_2yr,gpa_hi,Tahoma,comprehensive,2014–2023,1,10,0
+per_2yr,gpa_hi,Auburn Riverside,comprehensive,2014–2023,1,10,0
+per_2yr,gpa_hi,Kentlake,comprehensive,2012–2023,3,4,0
+per_2yr,gpa_hi,Auburn Mountainview,comprehensive,2014–2023,1,10,0
+per_2yr,gpa_hi,Kent-Meridian,comprehensive,2012–2023,3,4,0
+per_2yr,gpa_hi,Bonney Lake,comprehensive,2014–2023,1,10,0
+per_2yr,gpa_hi,Enumclaw,comprehensive,2012–2023,3,4,0
+per_2yr,gpa_hi,Todd Beamer,comprehensive,2014–2023,1,10,0
+per_2yr,gpa_hi,Thomas Jefferson,comprehensive,2014–2023,1,10,0
+per_2yr,gpa_hi,Decatur,comprehensive,2015–2023,1,9,1
+per_2yr,gpa_hi,Federal Way HS,comprehensive,2014–2023,1,10,0
+per_2yr,gpa_hi,Sumner,comprehensive,2014–2023,1,10,0
+per_2yr,gpa_hi,Auburn HS,comprehensive,2014–2023,1,9,1
+per_2yr,gpa_lo,Kentridge,comprehensive,2012–2023,3,4,0
+per_2yr,gpa_lo,Kentwood,comprehensive,2012–2023,3,4,0
+per_2yr,gpa_lo,Tahoma,comprehensive,2014–2023,1,10,0
+per_2yr,gpa_lo,Kentlake,comprehensive,2012–2023,3,4,0
+per_2yr,gpa_lo,Kent-Meridian,comprehensive,2012–2023,3,4,0
+per_2yr,gpa_lo,Auburn Mountainview,comprehensive,2014–2023,1,10,0
+per_2yr,gpa_lo,Auburn Riverside,comprehensive,2014–2023,1,10,0
+per_2yr,gpa_lo,Decatur,comprehensive,2014–2023,1,10,0
+per_2yr,gpa_lo,Bonney Lake,comprehensive,2014–2023,1,10,0
+per_2yr,gpa_lo,Thomas Jefferson,comprehensive,2014–2023,1,10,0
+per_2yr,gpa_lo,Auburn HS,comprehensive,2014–2023,1,10,0
+per_2yr,gpa_lo,Todd Beamer,comprehensive,2014–2023,1,10,0
+per_2yr,gpa_lo,Enumclaw,comprehensive,2012–2023,3,4,0
+per_2yr,gpa_lo,Sumner,comprehensive,2014–2023,1,10,0
+per_2yr,gpa_lo,Federal Way HS,comprehensive,2014–2023,1,10,0
+comp_ba6,all,Kentridge,comprehensive,2009–2018,1,10,0
+comp_ba6,all,Kentwood,comprehensive,2009–2018,1,10,0
+comp_ba6,all,Tahoma,comprehensive,2009–2018,1,10,0
+comp_ba6,all,Thomas Jefferson,comprehensive,2009–2018,1,10,0
+comp_ba6,all,Kentlake,comprehensive,2009–2018,1,10,0
+comp_ba6,all,Auburn Riverside,comprehensive,2009–2018,1,10,0
+comp_ba6,all,Auburn Mountainview,comprehensive,2009–2018,1,10,0
+comp_ba6,all,Todd Beamer,comprehensive,2009–2018,1,10,0
+comp_ba6,all,Sumner,comprehensive,2009–2018,1,10,0
+comp_ba6,all,Decatur,comprehensive,2009–2018,1,10,0
+comp_ba6,all,Enumclaw,comprehensive,2009–2018,1,10,0
+comp_ba6,all,Bonney Lake,comprehensive,2009–2018,1,10,0
+comp_ba6,all,Kent-Meridian,comprehensive,2009–2018,1,10,0
+comp_ba6,all,Federal Way HS,comprehensive,2009–2018,1,10,0
+comp_ba6,all,Auburn HS,comprehensive,2009–2018,1,10,0
+comp_ba6,all,TAFA at Saghalie,choice,2013–2015,3,1,1
+comp_ba6,gpa_hi,Kentwood,comprehensive,2007–2018,3,4,0
+comp_ba6,gpa_hi,Kentridge,comprehensive,2007–2018,3,4,0
+comp_ba6,gpa_hi,Kentlake,comprehensive,2007–2018,3,4,0
+comp_ba6,gpa_hi,Tahoma,comprehensive,2009–2018,1,10,0
+comp_ba6,gpa_hi,Thomas Jefferson,comprehensive,2009–2018,1,10,0
+comp_ba6,gpa_hi,Auburn Riverside,comprehensive,2009–2018,1,10,0
+comp_ba6,gpa_hi,Auburn Mountainview,comprehensive,2009–2018,1,10,0
+comp_ba6,gpa_hi,Sumner,comprehensive,2009–2018,1,10,0
+comp_ba6,gpa_hi,Kent-Meridian,comprehensive,2007–2018,3,4,0
+comp_ba6,gpa_hi,Todd Beamer,comprehensive,2009–2018,1,10,0
+comp_ba6,gpa_hi,Decatur,comprehensive,2009–2018,1,10,0
+comp_ba6,gpa_hi,Enumclaw,comprehensive,2007–2018,3,4,0
+comp_ba6,gpa_hi,Bonney Lake,comprehensive,2009–2018,1,10,0
+comp_ba6,gpa_hi,Federal Way HS,comprehensive,2009–2018,1,10,0
+comp_ba6,gpa_hi,Auburn HS,comprehensive,2009–2018,1,10,0
+comp_ba6,gpa_lo,Kentwood,comprehensive,2007–2018,3,4,0
+comp_ba6,gpa_lo,Kentridge,comprehensive,2007–2018,3,4,0
+comp_ba6,gpa_lo,Tahoma,comprehensive,2009–2018,1,10,0
+comp_ba6,gpa_lo,Kentlake,comprehensive,2007–2018,3,4,0
+comp_ba6,gpa_lo,Kent-Meridian,comprehensive,2007–2018,3,4,0
+comp_ba6,gpa_lo,Decatur,comprehensive,2009–2018,1,10,0
+comp_ba6,gpa_lo,Auburn Mountainview,comprehensive,2009–2018,1,10,0
+comp_ba6,gpa_lo,Enumclaw,comprehensive,2007–2018,3,4,0
+comp_ba6,gpa_lo,Thomas Jefferson,comprehensive,2009–2018,1,10,0
+comp_ba6,gpa_lo,Auburn Riverside,comprehensive,2009–2018,1,10,0
+comp_ba6,gpa_lo,Sumner,comprehensive,2009–2018,1,10,0
+comp_ba6,gpa_lo,Todd Beamer,comprehensive,2009–2018,1,10,0
+comp_ba6,gpa_lo,Bonney Lake,comprehensive,2009–2018,1,9,1
+comp_ba6,gpa_lo,Auburn HS,comprehensive,2009–2018,1,10,0
+comp_ba6,gpa_lo,Federal Way HS,comprehensive,2009–2018,1,10,0
+comp_any6,all,Kentridge,comprehensive,2009–2018,1,10,0
+comp_any6,all,Kentwood,comprehensive,2009–2018,1,10,0
+comp_any6,all,Kentlake,comprehensive,2009–2018,1,10,0
+comp_any6,all,Tahoma,comprehensive,2009–2018,1,10,0
+comp_any6,all,Thomas Jefferson,comprehensive,2009–2018,1,10,0
+comp_any6,all,Auburn Mountainview,comprehensive,2009–2018,1,10,0
+comp_any6,all,Auburn Riverside,comprehensive,2009–2018,1,10,0
+comp_any6,all,Todd Beamer,comprehensive,2009–2018,1,10,0
+comp_any6,all,Decatur,comprehensive,2009–2018,1,10,0
+comp_any6,all,Enumclaw,comprehensive,2009–2018,1,10,0
+comp_any6,all,Sumner,comprehensive,2009–2018,1,10,0
+comp_any6,all,Kent-Meridian,comprehensive,2009–2018,1,10,0
+comp_any6,all,Bonney Lake,comprehensive,2009–2018,1,10,0
+comp_any6,all,Auburn HS,comprehensive,2009–2018,1,10,0
+comp_any6,all,Federal Way HS,comprehensive,2009–2018,1,10,0
+comp_any6,all,TAFA at Saghalie,choice,2013–2015,3,1,1
+comp_any6,gpa_hi,Kentwood,comprehensive,2007–2018,3,4,0
+comp_any6,gpa_hi,Kentridge,comprehensive,2007–2018,3,4,0
+comp_any6,gpa_hi,Kentlake,comprehensive,2007–2018,3,4,0
+comp_any6,gpa_hi,Tahoma,comprehensive,2009–2018,1,10,0
+comp_any6,gpa_hi,Thomas Jefferson,comprehensive,2009–2018,1,10,0
+comp_any6,gpa_hi,Auburn Riverside,comprehensive,2009–2018,1,10,0
+comp_any6,gpa_hi,Auburn Mountainview,comprehensive,2009–2018,1,10,0
+comp_any6,gpa_hi,Kent-Meridian,comprehensive,2007–2018,3,4,0
+comp_any6,gpa_hi,Sumner,comprehensive,2009–2018,1,10,0
+comp_any6,gpa_hi,Enumclaw,comprehensive,2007–2018,3,4,0
+comp_any6,gpa_hi,Decatur,comprehensive,2009–2018,1,10,0
+comp_any6,gpa_hi,Todd Beamer,comprehensive,2009–2018,1,10,0
+comp_any6,gpa_hi,Bonney Lake,comprehensive,2009–2018,1,10,0
+comp_any6,gpa_hi,Auburn HS,comprehensive,2009–2018,1,10,0
+comp_any6,gpa_hi,Federal Way HS,comprehensive,2009–2018,1,10,0
+comp_any6,gpa_lo,Kentridge,comprehensive,2007–2018,3,4,0
+comp_any6,gpa_lo,Kentwood,comprehensive,2007–2018,3,4,0
+comp_any6,gpa_lo,Kentlake,comprehensive,2007–2018,3,4,0
+comp_any6,gpa_lo,Kent-Meridian,comprehensive,2007–2018,3,4,0
+comp_any6,gpa_lo,Tahoma,comprehensive,2009–2018,1,10,0
+comp_any6,gpa_lo,Auburn Mountainview,comprehensive,2009–2018,1,10,0
+comp_any6,gpa_lo,Decatur,comprehensive,2009–2018,1,10,0
+comp_any6,gpa_lo,Enumclaw,comprehensive,2007–2018,3,4,0
+comp_any6,gpa_lo,Todd Beamer,comprehensive,2009–2018,1,10,0
+comp_any6,gpa_lo,Thomas Jefferson,comprehensive,2009–2018,1,10,0
+comp_any6,gpa_lo,Auburn Riverside,comprehensive,2009–2018,1,10,0
+comp_any6,gpa_lo,Sumner,comprehensive,2009–2018,1,10,0
+comp_any6,gpa_lo,Bonney Lake,comprehensive,2009–2018,1,9,1
+comp_any6,gpa_lo,Auburn HS,comprehensive,2009–2018,1,10,0
+comp_any6,gpa_lo,Federal Way HS,comprehensive,2009–2018,1,10,0
+comp_aa2,all,Kentlake,comprehensive,2013–2022,1,10,0
+comp_aa2,all,Kentwood,comprehensive,2013–2022,1,10,0
+comp_aa2,all,Kentridge,comprehensive,2013–2022,1,10,0
+comp_aa2,all,Todd Beamer,comprehensive,2013–2022,1,10,0
+comp_aa2,all,Kent-Meridian,comprehensive,2013–2022,1,10,0
+comp_aa2,all,Tahoma,comprehensive,2013–2022,1,10,0
+comp_aa2,all,Auburn Mountainview,comprehensive,2013–2022,1,10,0
+comp_aa2,all,Sumner,comprehensive,2013–2022,1,10,0
+comp_aa2,all,Thomas Jefferson,comprehensive,2013–2022,1,10,0
+comp_aa2,all,Auburn Riverside,comprehensive,2013–2022,1,10,0
+comp_aa2,all,Bonney Lake,comprehensive,2013–2022,1,10,0
+comp_aa2,all,Decatur,comprehensive,2013–2022,1,10,0
+comp_aa2,all,Enumclaw,comprehensive,2013–2022,1,10,0
+comp_aa2,all,Auburn HS,comprehensive,2013–2022,1,10,0
+comp_aa2,all,Federal Way HS,comprehensive,2013–2022,1,10,0
+comp_aa2,all,TAFA at Saghalie,choice,NA,3,0,6
+comp_aa2,all,Kent Laboratory Academy,choice,NA,1,0,1
+comp_aa2,gpa_hi,Auburn Riverside,comprehensive,2018–2022,1,3,7
+comp_aa2,gpa_hi,Kent-Meridian,comprehensive,2011–2022,3,4,0
+comp_aa2,gpa_hi,Kentwood,comprehensive,2011–2022,3,4,0
+comp_aa2,gpa_hi,Kentlake,comprehensive,2011–2022,3,4,0
+comp_aa2,gpa_hi,Auburn HS,comprehensive,2020–2022,1,2,8
+comp_aa2,gpa_hi,Todd Beamer,comprehensive,2013–2022,1,8,2
+comp_aa2,gpa_hi,Kentridge,comprehensive,2011–2022,3,4,0
+comp_aa2,gpa_hi,Sumner,comprehensive,2017–2022,1,6,4
+comp_aa2,gpa_hi,Bonney Lake,comprehensive,2018–2022,1,3,7
+comp_aa2,gpa_hi,Thomas Jefferson,comprehensive,2015–2022,1,8,2
+comp_aa2,gpa_hi,Auburn Mountainview,comprehensive,2015–2021,1,4,6
+comp_aa2,gpa_hi,Decatur,comprehensive,2013–2022,1,4,6
+comp_aa2,gpa_hi,Tahoma,comprehensive,2013–2022,1,10,0
+comp_aa2,gpa_hi,Enumclaw,comprehensive,2011–2022,3,4,0
+comp_aa2,gpa_hi,Federal Way HS,comprehensive,2022–2022,1,1,9
+comp_aa2,gpa_hi,TAFA at Saghalie,choice,NA,3,0,1
+comp_aa2,gpa_lo,Kentwood,comprehensive,2011–2022,3,4,0
+comp_aa2,gpa_lo,Kentridge,comprehensive,2011–2022,3,4,0
+comp_aa2,gpa_lo,Kentlake,comprehensive,2011–2022,3,4,0
+comp_aa2,gpa_lo,Kent-Meridian,comprehensive,2011–2022,3,4,0
+comp_aa2,gpa_lo,Tahoma,comprehensive,2013–2022,1,9,1
+comp_aa2,gpa_lo,Enumclaw,comprehensive,2011–2022,3,4,0
+comp_aa2,gpa_lo,Auburn HS,comprehensive,2018–2020,1,3,7
+comp_aa2,gpa_lo,Auburn Mountainview,comprehensive,NA,1,0,10
+comp_aa2,gpa_lo,Auburn Riverside,comprehensive,2016–2016,1,1,9
+comp_aa2,gpa_lo,Decatur,comprehensive,NA,1,0,10
+comp_aa2,gpa_lo,Federal Way HS,comprehensive,NA,1,0,10
+comp_aa2,gpa_lo,TAFA at Saghalie,choice,NA,3,0,1
+comp_aa2,gpa_lo,Thomas Jefferson,comprehensive,NA,1,0,10
+comp_aa2,gpa_lo,Todd Beamer,comprehensive,NA,1,0,10
+comp_aa2,gpa_lo,Bonney Lake,comprehensive,NA,1,0,10
+comp_aa2,gpa_lo,Sumner,comprehensive,2018–2018,1,1,9

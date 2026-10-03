@@ -1,0 +1,313 @@
+outcome,group,school_label,rate,basis,cohort
+enr_4yr,all,Kentridge,0.448,pooled,NA
+enr_4yr,all,Tahoma,0.425,pooled,NA
+enr_4yr,all,Sumner,0.388,pooled,NA
+enr_4yr,all,Kentwood,0.364,pooled,NA
+enr_4yr,all,Thomas Jefferson,0.363,pooled,NA
+enr_4yr,all,Auburn Mountainview,0.329,pooled,NA
+enr_4yr,all,Auburn Riverside,0.329,pooled,NA
+enr_4yr,all,Decatur,0.324,pooled,NA
+enr_4yr,all,Todd Beamer,0.317,pooled,NA
+enr_4yr,all,Federal Way HS,0.316,pooled,NA
+enr_4yr,all,Bonney Lake,0.302,pooled,NA
+enr_4yr,all,Kentlake,0.301,pooled,NA
+enr_4yr,all,Enumclaw,0.299,pooled,NA
+enr_4yr,all,Kent-Meridian,0.252,pooled,NA
+enr_4yr,all,Auburn HS,0.212,pooled,NA
+enr_4yr,gpa_hi,Kentridge,0.6625,pooled,NA
+enr_4yr,gpa_hi,Tahoma,0.606,pooled,NA
+enr_4yr,gpa_hi,Kentwood,0.605,pooled,NA
+enr_4yr,gpa_hi,Sumner,0.596,pooled,NA
+enr_4yr,gpa_hi,Auburn Riverside,0.5609999999999999,pooled,NA
+enr_4yr,gpa_hi,Thomas Jefferson,0.554,pooled,NA
+enr_4yr,gpa_hi,Auburn Mountainview,0.527,pooled,NA
+enr_4yr,gpa_hi,Federal Way HS,0.526,pooled,NA
+enr_4yr,gpa_hi,Decatur,0.525,pooled,NA
+enr_4yr,gpa_hi,Kentlake,0.52,pooled,NA
+enr_4yr,gpa_hi,Enumclaw,0.515,pooled,NA
+enr_4yr,gpa_hi,Kent-Meridian,0.5075000000000001,pooled,NA
+enr_4yr,gpa_hi,Bonney Lake,0.507,pooled,NA
+enr_4yr,gpa_hi,Todd Beamer,0.506,pooled,NA
+enr_4yr,gpa_hi,Auburn HS,0.432,pooled,NA
+enr_any,all,Kentridge,0.747,pooled,NA
+enr_any,all,Kentwood,0.6719999999999999,pooled,NA
+enr_any,all,Tahoma,0.6709999999999999,pooled,NA
+enr_any,all,Auburn Mountainview,0.633,pooled,NA
+enr_any,all,Kentlake,0.622,pooled,NA
+enr_any,all,Auburn Riverside,0.605,pooled,NA
+enr_any,all,Thomas Jefferson,0.595,pooled,NA
+enr_any,all,Sumner,0.579,pooled,NA
+enr_any,all,Todd Beamer,0.573,pooled,NA
+enr_any,all,Kent-Meridian,0.556,pooled,NA
+enr_any,all,Decatur,0.556,pooled,NA
+enr_any,all,Federal Way HS,0.537,pooled,NA
+enr_any,all,Bonney Lake,0.531,pooled,NA
+enr_any,all,Enumclaw,0.498,pooled,NA
+enr_any,all,Auburn HS,0.454,pooled,NA
+enr_any,gpa_hi,Kentridge,0.8925000000000001,pooled,NA
+enr_any,gpa_hi,Kentwood,0.8525,pooled,NA
+enr_any,gpa_hi,Kentlake,0.8200000000000001,pooled,NA
+enr_any,gpa_hi,Auburn Mountainview,0.8140000000000001,pooled,NA
+enr_any,gpa_hi,Tahoma,0.811,pooled,NA
+enr_any,gpa_hi,Auburn Riverside,0.804,pooled,NA
+enr_any,gpa_hi,Kent-Meridian,0.785,pooled,NA
+enr_any,gpa_hi,Thomas Jefferson,0.784,pooled,NA
+enr_any,gpa_hi,Todd Beamer,0.765,pooled,NA
+enr_any,gpa_hi,Bonney Lake,0.763,pooled,NA
+enr_any,gpa_hi,Sumner,0.76,pooled,NA
+enr_any,gpa_hi,Decatur,0.754,pooled,NA
+enr_any,gpa_hi,Federal Way HS,0.752,pooled,NA
+enr_any,gpa_hi,Enumclaw,0.735,pooled,NA
+enr_any,gpa_hi,Auburn HS,0.6829999999999999,pooled,NA
+sel_uw,all,Kentridge,0.15436,pooled,NA
+sel_uw,all,Thomas Jefferson,0.148,pooled,NA
+sel_uw,all,Kent-Meridian,0.13064,pooled,NA
+sel_uw,all,Todd Beamer,0.12086,pooled,NA
+sel_uw,all,Federal Way HS,0.12,pooled,NA
+sel_uw,all,Kentwood,0.1124,pooled,NA
+sel_uw,all,Decatur,0.10207,pooled,NA
+sel_uw,all,Auburn Mountainview,0.08824,pooled,NA
+sel_uw,all,Auburn Riverside,0.07172,pooled,NA
+sel_uw,all,Kentlake,0.06434000000000001,pooled,NA
+sel_uw,all,Tahoma,0.05978,pooled,NA
+sel_uw,all,Auburn HS,0.05581,pooled,NA
+sel_uw,all,Bonney Lake,0.04394,pooled,NA
+sel_uw,all,Sumner,0.04328,pooled,NA
+sel_uw,all,Enumclaw,0.02689,pooled,NA
+per_4yr,all,Kentridge,0.945,pooled,NA
+per_4yr,all,Kentwood,0.936,pooled,NA
+per_4yr,all,Tahoma,0.924,pooled,NA
+per_4yr,all,Kent-Meridian,0.92,pooled,NA
+per_4yr,all,Auburn Mountainview,0.913,pooled,NA
+per_4yr,all,Auburn Riverside,0.907,pooled,NA
+per_4yr,all,Sumner,0.905,pooled,NA
+per_4yr,all,Thomas Jefferson,0.895,pooled,NA
+per_4yr,all,Kentlake,0.8922222222222222,pooled,NA
+per_4yr,all,Todd Beamer,0.891,pooled,NA
+per_4yr,all,Decatur,0.884,pooled,NA
+per_4yr,all,Enumclaw,0.868,pooled,NA
+per_4yr,all,Auburn HS,0.865,pooled,NA
+per_4yr,all,Bonney Lake,0.868,pooled,NA
+per_4yr,all,Federal Way HS,0.833,pooled,NA
+per_4yr,gpa_hi,Kent-Meridian,0.9625,pooled,NA
+per_4yr,gpa_hi,Kentwood,0.96,pooled,NA
+per_4yr,gpa_hi,Kentridge,0.9575,pooled,NA
+per_4yr,gpa_hi,Auburn Riverside,0.9422222222222222,pooled,NA
+per_4yr,gpa_hi,Tahoma,0.94,pooled,NA
+per_4yr,gpa_hi,Sumner,0.936,pooled,NA
+per_4yr,gpa_hi,Kentlake,0.935,pooled,NA
+per_4yr,gpa_hi,Thomas Jefferson,0.9325,pooled,NA
+per_4yr,gpa_hi,Enumclaw,0.9075,pooled,NA
+per_4yr,gpa_hi,Bonney Lake,0.9144444444444444,pooled,NA
+per_4yr,gpa_hi,Auburn HS,0.90625,pooled,NA
+per_4yr,gpa_hi,Federal Way HS,0.888,pooled,NA
+comp_ba6,all,Kentridge,0.461,pooled,NA
+comp_ba6,all,Kentwood,0.399,pooled,NA
+comp_ba6,all,Tahoma,0.374,pooled,NA
+comp_ba6,all,Thomas Jefferson,0.357,pooled,NA
+comp_ba6,all,Kentlake,0.354,pooled,NA
+comp_ba6,all,Auburn Riverside,0.328,pooled,NA
+comp_ba6,all,Auburn Mountainview,0.311,pooled,NA
+comp_ba6,all,Todd Beamer,0.301,pooled,NA
+comp_ba6,all,Sumner,0.298,pooled,NA
+comp_ba6,all,Decatur,0.287,pooled,NA
+comp_ba6,all,Enumclaw,0.277,pooled,NA
+comp_ba6,all,Bonney Lake,0.256,pooled,NA
+comp_ba6,all,Kent-Meridian,0.251,pooled,NA
+comp_ba6,all,Federal Way HS,0.23,pooled,NA
+comp_ba6,all,Auburn HS,0.201,pooled,NA
+comp_ba6,gpa_hi,Kentwood,0.6799999999999999,pooled,NA
+comp_ba6,gpa_hi,Kentridge,0.6625000000000001,pooled,NA
+comp_ba6,gpa_hi,Kentlake,0.6074999999999999,pooled,NA
+comp_ba6,gpa_hi,Tahoma,0.588,pooled,NA
+comp_ba6,gpa_hi,Thomas Jefferson,0.581,pooled,NA
+comp_ba6,gpa_hi,Auburn Riverside,0.572,pooled,NA
+comp_ba6,gpa_hi,Auburn Mountainview,0.536,pooled,NA
+comp_ba6,gpa_hi,Sumner,0.532,pooled,NA
+comp_ba6,gpa_hi,Kent-Meridian,0.51,pooled,NA
+comp_ba6,gpa_hi,Todd Beamer,0.504,pooled,NA
+comp_ba6,gpa_hi,Decatur,0.495,pooled,NA
+comp_ba6,gpa_hi,Enumclaw,0.49,pooled,NA
+comp_ba6,gpa_hi,Bonney Lake,0.489,pooled,NA
+comp_ba6,gpa_hi,Federal Way HS,0.435,pooled,NA
+comp_ba6,gpa_hi,Auburn HS,0.434,pooled,NA
+comp_any6,all,Kentridge,0.595,pooled,NA
+comp_any6,all,Kentwood,0.539,pooled,NA
+comp_any6,all,Kentlake,0.522,pooled,NA
+comp_any6,all,Tahoma,0.501,pooled,NA
+comp_any6,all,Thomas Jefferson,0.472,pooled,NA
+comp_any6,all,Auburn Mountainview,0.458,pooled,NA
+comp_any6,all,Auburn Riverside,0.45,pooled,NA
+comp_any6,all,Todd Beamer,0.432,pooled,NA
+comp_any6,all,Decatur,0.414,pooled,NA
+comp_any6,all,Enumclaw,0.414,pooled,NA
+comp_any6,all,Sumner,0.409,pooled,NA
+comp_any6,all,Kent-Meridian,0.404,pooled,NA
+comp_any6,all,Bonney Lake,0.375,pooled,NA
+comp_any6,all,Auburn HS,0.324,pooled,NA
+comp_any6,all,Federal Way HS,0.32,pooled,NA
+comp_any6,gpa_hi,Kentwood,0.7875000000000001,pooled,NA
+comp_any6,gpa_hi,Kentridge,0.77,pooled,NA
+comp_any6,gpa_hi,Kentlake,0.75,pooled,NA
+comp_any6,gpa_hi,Tahoma,0.709,pooled,NA
+comp_any6,gpa_hi,Thomas Jefferson,0.699,pooled,NA
+comp_any6,gpa_hi,Auburn Riverside,0.694,pooled,NA
+comp_any6,gpa_hi,Auburn Mountainview,0.689,pooled,NA
+comp_any6,gpa_hi,Kent-Meridian,0.6599999999999999,pooled,NA
+comp_any6,gpa_hi,Sumner,0.645,pooled,NA
+comp_any6,gpa_hi,Enumclaw,0.6425000000000001,pooled,NA
+comp_any6,gpa_hi,Decatur,0.638,pooled,NA
+comp_any6,gpa_hi,Todd Beamer,0.63,pooled,NA
+comp_any6,gpa_hi,Bonney Lake,0.627,pooled,NA
+comp_any6,gpa_hi,Auburn HS,0.5850000000000001,pooled,NA
+comp_any6,gpa_hi,Federal Way HS,0.541,pooled,NA
+enr_4yr,female,Auburn HS,0.247,pooled,NA
+enr_4yr,female,Auburn Mountainview,0.387,pooled,NA
+enr_4yr,female,Auburn Riverside,0.394,pooled,NA
+enr_4yr,female,Bonney Lake,0.355,pooled,NA
+enr_4yr,female,Decatur,0.378,pooled,NA
+enr_4yr,female,Enumclaw,0.356,pooled,NA
+enr_4yr,female,Federal Way HS,0.36,pooled,NA
+enr_4yr,female,Kent-Meridian,0.312,pooled,NA
+enr_4yr,female,Kentlake,0.33699999999999997,pooled,NA
+enr_4yr,female,Kentridge,0.517,pooled,NA
+enr_4yr,female,Kentwood,0.409,pooled,NA
+enr_4yr,female,Sumner,0.441,pooled,NA
+enr_4yr,female,Tahoma,0.501,pooled,NA
+enr_4yr,female,Thomas Jefferson,0.398,pooled,NA
+enr_4yr,female,Todd Beamer,0.358,pooled,NA
+enr_any,female,Auburn HS,0.496,pooled,NA
+enr_any,female,Auburn Mountainview,0.704,pooled,NA
+enr_any,female,Auburn Riverside,0.6709999999999999,pooled,NA
+enr_any,female,Bonney Lake,0.604,pooled,NA
+enr_any,female,Decatur,0.605,pooled,NA
+enr_any,female,Enumclaw,0.562,pooled,NA
+enr_any,female,Federal Way HS,0.5890000000000001,pooled,NA
+enr_any,female,Kent-Meridian,0.606,pooled,NA
+enr_any,female,Kentlake,0.6809999999999999,pooled,NA
+enr_any,female,Kentridge,0.796,pooled,NA
+enr_any,female,Kentwood,0.716,pooled,NA
+enr_any,female,Sumner,0.631,pooled,NA
+enr_any,female,Tahoma,0.74,pooled,NA
+enr_any,female,Thomas Jefferson,0.646,pooled,NA
+enr_any,female,Todd Beamer,0.627,pooled,NA
+comp_ba6,female,Auburn HS,0.23399999999999999,pooled,NA
+comp_ba6,female,Auburn Mountainview,0.356,pooled,NA
+comp_ba6,female,Auburn Riverside,0.377,pooled,NA
+comp_ba6,female,Bonney Lake,0.298,pooled,NA
+comp_ba6,female,Decatur,0.336,pooled,NA
+comp_ba6,female,Enumclaw,0.329,pooled,NA
+comp_ba6,female,Federal Way HS,0.27,pooled,NA
+comp_ba6,female,Kent-Meridian,0.28200000000000003,pooled,NA
+comp_ba6,female,Kentlake,0.386,pooled,NA
+comp_ba6,female,Kentridge,0.508,pooled,NA
+comp_ba6,female,Kentwood,0.447,pooled,NA
+comp_ba6,female,Sumner,0.37,pooled,NA
+comp_ba6,female,Tahoma,0.432,pooled,NA
+comp_ba6,female,Thomas Jefferson,0.394,pooled,NA
+comp_ba6,female,Todd Beamer,0.346,pooled,NA
+comp_any6,female,Auburn HS,0.368,pooled,NA
+comp_any6,female,Auburn Mountainview,0.516,pooled,NA
+comp_any6,female,Auburn Riverside,0.507,pooled,NA
+comp_any6,female,Bonney Lake,0.429,pooled,NA
+comp_any6,female,Decatur,0.453,pooled,NA
+comp_any6,female,Enumclaw,0.454,pooled,NA
+comp_any6,female,Federal Way HS,0.368,pooled,NA
+comp_any6,female,Kent-Meridian,0.448,pooled,NA
+comp_any6,female,Kentlake,0.5640000000000001,pooled,NA
+comp_any6,female,Kentridge,0.645,pooled,NA
+comp_any6,female,Kentwood,0.5870000000000001,pooled,NA
+comp_any6,female,Sumner,0.486,pooled,NA
+comp_any6,female,Tahoma,0.5630000000000001,pooled,NA
+comp_any6,female,Thomas Jefferson,0.518,pooled,NA
+comp_any6,female,Todd Beamer,0.488,pooled,NA
+enr_4yr,all,Auburn Mountainview,0.31,same_cohort,2022
+enr_4yr,all,Auburn Riverside,0.36,same_cohort,2022
+enr_4yr,all,Auburn HS,0.21,same_cohort,2022
+enr_4yr,all,Enumclaw,0.27,same_cohort,2022
+enr_4yr,all,Decatur,0.39,same_cohort,2022
+enr_4yr,all,Federal Way HS,0.28,same_cohort,2022
+enr_4yr,all,Thomas Jefferson,0.37,same_cohort,2022
+enr_4yr,all,Todd Beamer,0.35,same_cohort,2022
+enr_4yr,all,Kentlake,0.26,same_cohort,2022
+enr_4yr,all,Kent-Meridian,0.23,same_cohort,2022
+enr_4yr,all,Kentridge,0.43,same_cohort,2022
+enr_4yr,all,Kentwood,0.35,same_cohort,2022
+enr_4yr,all,Bonney Lake,0.27,same_cohort,2022
+enr_4yr,all,Sumner,0.36,same_cohort,2022
+enr_4yr,all,Tahoma,0.45,same_cohort,2022
+enr_any,all,Auburn Mountainview,0.62,same_cohort,2024
+enr_any,all,Auburn Riverside,0.5700000000000001,same_cohort,2024
+enr_any,all,Auburn HS,0.48,same_cohort,2024
+enr_any,all,Enumclaw,0.49,same_cohort,2024
+enr_any,all,Decatur,0.5800000000000001,same_cohort,2024
+enr_any,all,Federal Way HS,0.49,same_cohort,2024
+enr_any,all,Thomas Jefferson,0.51,same_cohort,2024
+enr_any,all,Todd Beamer,0.55,same_cohort,2024
+enr_any,all,Kentlake,0.56,same_cohort,2024
+enr_any,all,Kent-Meridian,0.5700000000000001,same_cohort,2024
+enr_any,all,Kentridge,0.73,same_cohort,2024
+enr_any,all,Kentwood,0.65,same_cohort,2024
+enr_any,all,Bonney Lake,0.47,same_cohort,2024
+enr_any,all,Sumner,0.51,same_cohort,2024
+enr_any,all,Tahoma,0.69,same_cohort,2024
+comp_ba6,all,Auburn Mountainview,0.31,same_cohort,2017
+comp_ba6,all,Auburn Riverside,0.31,same_cohort,2017
+comp_ba6,all,Auburn HS,0.15,same_cohort,2017
+comp_ba6,all,Enumclaw,0.28,same_cohort,2017
+comp_ba6,all,Decatur,0.23,same_cohort,2017
+comp_ba6,all,Federal Way HS,0.25,same_cohort,2017
+comp_ba6,all,Thomas Jefferson,0.33,same_cohort,2017
+comp_ba6,all,Todd Beamer,0.29,same_cohort,2017
+comp_ba6,all,Kentlake,0.34,same_cohort,2017
+comp_ba6,all,Kent-Meridian,0.29,same_cohort,2017
+comp_ba6,all,Kentridge,0.48,same_cohort,2017
+comp_ba6,all,Kentwood,0.42,same_cohort,2017
+comp_ba6,all,Bonney Lake,0.26,same_cohort,2017
+comp_ba6,all,Sumner,0.35,same_cohort,2017
+comp_ba6,all,Tahoma,0.37,same_cohort,2017
+enr_4yr,female,Auburn Mountainview,0.38,same_cohort,2022
+enr_4yr,female,Auburn Riverside,0.51,same_cohort,2022
+enr_4yr,female,Auburn HS,0.23,same_cohort,2022
+enr_4yr,female,Enumclaw,0.31,same_cohort,2022
+enr_4yr,female,Decatur,0.48,same_cohort,2022
+enr_4yr,female,Federal Way HS,0.31,same_cohort,2022
+enr_4yr,female,Thomas Jefferson,0.4,same_cohort,2022
+enr_4yr,female,Todd Beamer,0.39,same_cohort,2022
+enr_4yr,female,Kentlake,0.32,same_cohort,2022
+enr_4yr,female,Kent-Meridian,0.33,same_cohort,2022
+enr_4yr,female,Kentridge,0.49,same_cohort,2022
+enr_4yr,female,Kentwood,0.35,same_cohort,2022
+enr_4yr,female,Bonney Lake,0.3,same_cohort,2022
+enr_4yr,female,Sumner,0.4,same_cohort,2022
+enr_4yr,female,Tahoma,0.51,same_cohort,2022
+enr_any,female,Auburn Mountainview,0.71,same_cohort,2024
+enr_any,female,Auburn Riverside,0.62,same_cohort,2024
+enr_any,female,Auburn HS,0.5700000000000001,same_cohort,2024
+enr_any,female,Enumclaw,0.5800000000000001,same_cohort,2024
+enr_any,female,Decatur,0.65,same_cohort,2024
+enr_any,female,Federal Way HS,0.56,same_cohort,2024
+enr_any,female,Thomas Jefferson,0.5900000000000001,same_cohort,2024
+enr_any,female,Todd Beamer,0.64,same_cohort,2024
+enr_any,female,Kentlake,0.6799999999999999,same_cohort,2024
+enr_any,female,Kent-Meridian,0.63,same_cohort,2024
+enr_any,female,Kentridge,0.77,same_cohort,2024
+enr_any,female,Kentwood,0.74,same_cohort,2024
+enr_any,female,Bonney Lake,0.53,same_cohort,2024
+enr_any,female,Sumner,0.56,same_cohort,2024
+enr_any,female,Tahoma,0.76,same_cohort,2024
+comp_ba6,female,Auburn Mountainview,0.41,same_cohort,2017
+comp_ba6,female,Auburn Riverside,0.35,same_cohort,2017
+comp_ba6,female,Auburn HS,0.21,same_cohort,2017
+comp_ba6,female,Enumclaw,0.33,same_cohort,2017
+comp_ba6,female,Decatur,0.26,same_cohort,2017
+comp_ba6,female,Federal Way HS,0.36,same_cohort,2017
+comp_ba6,female,Thomas Jefferson,0.35,same_cohort,2017
+comp_ba6,female,Todd Beamer,0.35,same_cohort,2017
+comp_ba6,female,Kentlake,0.35,same_cohort,2017
+comp_ba6,female,Kent-Meridian,0.39,same_cohort,2017
+comp_ba6,female,Kentridge,0.55,same_cohort,2017
+comp_ba6,female,Kentwood,0.45,same_cohort,2017
+comp_ba6,female,Bonney Lake,0.29,same_cohort,2017
+comp_ba6,female,Sumner,0.39,same_cohort,2017
+comp_ba6,female,Tahoma,0.43,same_cohort,2017

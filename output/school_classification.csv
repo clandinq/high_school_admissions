@@ -1,0 +1,38 @@
+district,school,school_label,school_type,first_cohort,last_cohort
+Federal Way,TAFA at Saghalie,TAFA at Saghalie,choice,2014,2024
+Kent,Kent Laboratory Academy,Kent Laboratory Academy,choice,2022,2024
+Auburn,Auburn Mountainview High School,Auburn Mountainview,comprehensive,2007,2024
+Auburn,Auburn Riverside High School,Auburn Riverside,comprehensive,2005,2024
+Auburn,Auburn Senior High School,Auburn HS,comprehensive,2005,2024
+Enumclaw,Enumclaw Sr High School,Enumclaw,comprehensive,2005,2024
+Federal Way,Decatur High School,Decatur,comprehensive,2005,2024
+Federal Way,Federal Way High School,Federal Way HS,comprehensive,2005,2024
+Federal Way,Thomas Jefferson High School,Thomas Jefferson,comprehensive,2005,2024
+Federal Way,Todd Beamer High School,Todd Beamer,comprehensive,2005,2024
+Kent,Kent-Meridian High School,Kent-Meridian,comprehensive,2005,2024
+Kent,Kentlake High School,Kentlake,comprehensive,2005,2024
+Kent,Kentridge High School,Kentridge,comprehensive,2005,2024
+Kent,Kentwood High School,Kentwood,comprehensive,2005,2024
+Sumner,Bonney Lake High School,Bonney Lake,comprehensive,2007,2024
+Sumner,Sumner High School,Sumner,comprehensive,2005,2024
+Tahoma,Tahoma Senior High School,Tahoma,comprehensive,2005,2024
+Auburn,District Wide,Distrito Auburn,district,2005,2024
+Enumclaw,District Wide,Distrito Enumclaw,district,2005,2024
+Federal Way,District Wide,Distrito Federal Way,district,2005,2024
+Kent,District Wide,Distrito Kent,district,2005,2024
+Sumner,District Wide,Distrito Sumner,district,2005,2024
+Tahoma,District Wide,Distrito Tahoma,district,2005,2024
+Auburn,Auburn Opportunity Project,Auburn Opportunity Project,excluded,2021,2024
+Auburn,BOISTFORT ONLINE SCHOOL,BOISTFORT ONLINE SCHOOL,excluded,2024,2024
+Auburn,West Auburn Senior High School,West Auburn Senior High School,excluded,2007,2023
+Federal Way,Career Academy at Truman High School,Career Academy at Truman High School,excluded,2012,2024
+Federal Way,Employment Transition Program,Employment Transition Program,excluded,2011,2024
+Federal Way,H. S. Truman High School,H. S. Truman High School,excluded,2007,2009
+Federal Way,Internet Academy,Internet Academy,excluded,2012,2024
+Federal Way,Open Doors Youth Reengagement (1418),Open Doors Youth Reengagement (1418),excluded,2018,2024
+Kent,Kent Mountain View Academy,Kent Mountain View Academy,excluded,2005,2020
+Kent,Kent Phoenix Academy,Kent Phoenix Academy,excluded,2010,2023
+Kent,Northshore Learning Options,Northshore Learning Options,excluded,2024,2024
+Kent,The Outreach Program,The Outreach Program,excluded,2019,2024
+Kent,iGrad,iGrad,excluded,2015,2024
+Tahoma,Maple Valley High School,Maple Valley High School,excluded,2007,2008

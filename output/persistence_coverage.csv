@@ -1,0 +1,31 @@
+school,school_label,group,cohort_span,n_present,n_suppressed,n_expected,n_absent,n_usable
+Auburn Senior High School,Auburn HS,all,1,10,0,10,0,10
+Auburn Mountainview High School,Auburn Mountainview,all,1,10,0,10,0,10
+Auburn Riverside High School,Auburn Riverside,all,1,10,0,10,0,10
+Bonney Lake High School,Bonney Lake,all,1,10,0,10,0,10
+Decatur High School,Decatur,all,1,10,0,10,0,10
+Enumclaw Sr High School,Enumclaw,all,1,10,0,10,0,10
+Federal Way High School,Federal Way HS,all,1,10,0,10,0,10
+Kent-Meridian High School,Kent-Meridian,all,1,10,0,10,0,10
+Kentlake High School,Kentlake,all,1,10,1,10,0,9
+Kentridge High School,Kentridge,all,1,10,0,10,0,10
+Kentwood High School,Kentwood,all,1,10,0,10,0,10
+Sumner High School,Sumner,all,1,10,0,10,0,10
+Tahoma Senior High School,Tahoma,all,1,10,0,10,0,10
+Thomas Jefferson High School,Thomas Jefferson,all,1,10,0,10,0,10
+Todd Beamer High School,Todd Beamer,all,1,10,0,10,0,10
+Auburn Senior High School,Auburn HS,gpa_hi,1,10,2,10,0,8
+Auburn Mountainview High School,Auburn Mountainview,gpa_hi,1,0,0,10,10,0
+Auburn Riverside High School,Auburn Riverside,gpa_hi,1,10,1,10,0,9
+Bonney Lake High School,Bonney Lake,gpa_hi,1,10,1,10,0,9
+Decatur High School,Decatur,gpa_hi,1,0,0,10,10,0
+Enumclaw Sr High School,Enumclaw,gpa_hi,3,4,0,4,0,4
+Federal Way High School,Federal Way HS,gpa_hi,1,10,0,10,0,10
+Kent-Meridian High School,Kent-Meridian,gpa_hi,3,4,0,4,0,4
+Kentlake High School,Kentlake,gpa_hi,3,4,0,4,0,4
+Kentridge High School,Kentridge,gpa_hi,3,4,0,4,0,4
+Kentwood High School,Kentwood,gpa_hi,3,4,0,4,0,4
+Sumner High School,Sumner,gpa_hi,1,10,0,10,0,10
+Tahoma Senior High School,Tahoma,gpa_hi,1,10,1,10,0,9
+Thomas Jefferson High School,Thomas Jefferson,gpa_hi,1,10,2,10,0,8
+Todd Beamer High School,Todd Beamer,gpa_hi,1,0,0,10,10,0
