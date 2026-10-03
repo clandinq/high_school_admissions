@@ -48,6 +48,9 @@ This is step 0 of `08_private.R`. The source documents in `data/private/<school 
 
 Acceptance figures always get `measure_kind = acceptance` and `metric_std = other`, even when the document calls them "college placement".
 
+## Public schools: `output/public_profiles/extraction_college_board.csv`
+The same columns and the same rule apply. One row per printed SAT or AP figure from the OSPI "Summary by School" PDFs saved in `data/public_profiles/`. The score or count goes in `numerator`, `value` stays blank, `metric_std = other` and `measure_kind = descriptive`. `metric_raw` is one of `SAT test-takers`, `Mean SAT total`, `Mean SAT ERW`, `Mean SAT Math`, `AP exam takers`, `AP exams taken` or `AP exams scored 3, 4 or 5`; the 2016 file uses `Mean SAT Critical Reading`, `Mean SAT Math` and `Mean SAT Writing`. `quote` holds the full OSPI row. `script/09_coursework_sat.R` reads this file.
+
 ## `output/private/qualitative_<school_id>.csv`
 Columns: `school_id, field, value, doc_file, page, quote`. There is one row per field found. Omit fields that are not documented.
 

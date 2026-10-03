@@ -38,6 +38,9 @@ pers_sens <- read_csv(here("output", "persistence_suppression_sensitivity.csv"))
 enr_rho   <- read_csv(here("output", "rank_enrollment_spearman.csv"))
 comp_sens <- read_csv(here("output", "rank_completion_sensitivity.csv"))
 pers_cov  <- read_csv(here("output", "persistence_coverage.csv"))
+cw_pub    <- read_csv(here("output", "coursework_public.csv"))
+cw_priv   <- read_csv(here("output", "coursework_private.csv"))
+sat       <- read_csv(here("output", "sat_table.csv"), col_types = cols(cohort = col_character()))
 
 # Inline helpers: EB rate (as "xx %") for one school, and the regional mean.
 fmt_pct <- function(x) paste0(round(100 * x), " %")
@@ -134,6 +137,12 @@ La cohorte 2025 solo tiene inscripción en otoño y no es comparable con las ant
 - **Fuera del estado:** Stanford, University of Pennsylvania, Carnegie Mellon, UC Berkeley, UCLA, UC San Diego, UC Santa Barbara, UC Irvine, University of Michigan, USC, NYU, Boston University, Northeastern, Tulane y UW–Madison.
 
 Sin embargo, el archivo de ERDC **solo nombra las ~8 instituciones más comunes de cada escuela y cohorte**; el resto aparece como "Otra". En la práctica, **ninguna universidad selectiva aparte de UW aparece nombrada** para estas escuelas. Además, ERDC agrupa los tres campus de UW (Seattle, Bothell y Tacoma). El indicador de "universidades selectivas" se reduce así a **inscripción en UW (cualquier campus)**, expresada como porcentaje de todos los graduados, y no tiene corte por GPA.
+
+**Cursos avanzados y SAT.** Estas cifras vienen de otras fuentes y se muestran sin ranking en una [sección aparte](#cursos):
+
+- OSPI Report Card (participación en doble crédito, 2024-25).
+- Civil Rights Data Collection federal (oferta de cursos, 2023-24).
+- Resúmenes de OSPI con datos del College Board (exámenes AP y SAT, 2024).
 
 ## Rankings por indicador
 
@@ -286,6 +295,131 @@ ggplot(e10 %>% filter(school_type != "state") %>% mutate(school_label = factor(s
        caption = "Líneas discontinuas: mediana estatal. Solo empleo cubierto por el seguro de desempleo de Washington; todas las cohortes agrupadas.") +
   theme_minimal(base_size = 11) +
   theme(legend.position = "bottom", plot.caption = element_text(hjust = 0, colour = "grey40", size = 8))
+```
+
+## Cursos avanzados y SAT (descriptivo, sin ranking) {#cursos}
+
+Esta sección describe qué cursos avanzados ofrece cada escuela, cuántos estudiantes los toman y cómo les va en los exámenes AP y en el SAT. **No es un ranking ni entra en el resumen estandarizado.** Hay tres razones:
+
+- Las cifras reflejan sobre todo quién asiste a cada escuela.
+- Las fuentes miden años y cosas distintas.
+- En el SAT, la escuela decide quién presenta el examen.
+
+```{r}
+cw  <- cw_pub %>% filter(school != "State Total")
+st  <- cw_pub %>% filter(school == "State Total")
+s24 <- sat %>% filter(cohort == "2024")
+ib_schools <- cw %>% filter(ib_program == 1) %>% pull(school_label)
+rng <- function(x) paste0(fmt_pct(min(x)), " y ", fmt_pct(max(x)))
+sat_rng <- function(b) s24 %>% filter(sat_broad == b) %>% summarise(r = paste0(min(sat_mean), " y ", max(sat_mean))) %>% pull(r)
+```
+
+**Fuentes:**
+
+- **Participación:** % de estudiantes de 9.º a 12.º grado que terminaron al menos un curso de doble crédito en 2024-25, por tipo de programa. Viene del Report Card de OSPI, medida *Dual Credit*.
+- **Oferta:** número de cursos AP distintos y si la escuela ofrece cálculo, física, informática e IB en 2023-24. Viene de la Civil Rights Data Collection (CRDC) federal.
+- **Exámenes:** exámenes AP y SAT de 2024. Vienen de los resúmenes por escuela que OSPI publica con datos del College Board.
+
+Los conteos de estudiantes en AP de OSPI y CRDC para 2023-24 coinciden de cerca en 14 de las 15 escuelas. La excepción es Kentridge: CRDC reporta 265 estudiantes en AP y OSPI unos 430.
+
+### Participación en cursos avanzados (2024-25)
+
+La participación en algún curso de doble crédito está entre `r rng(cw$dc_any)`, pero esa cifra está inflada por los cursos técnicos con crédito universitario (*CTE dual credit*). Las columnas más informativas son **AP, IB y College in the High School** (cursos universitarios impartidos en la escuela). La participación en AP está entre `r rng(cw$dc_ap)`. Algunas escuelas tienen muy poco AP porque usan el **Bachillerato Internacional (IB)** en su lugar: `r paste(ib_schools, collapse = ", ")`, cada una con 13 % o más de sus estudiantes en IB. Por eso un conteo de cursos AP, por sí solo, las haría parecer más débiles de lo que son.
+
+```{r}
+#| column: page-inset-right
+bind_rows(cw %>% arrange(desc(dc_ap + dc_ib + dc_cihs)), st %>% mutate(district = "")) %>%
+  select(school_label, district, dc_ap, dc_ib, dc_cihs, dc_rs, dc_cte, dc_any) %>%
+  gt() %>%
+  fmt_percent(starts_with("dc_"), decimals = 0) %>%
+  sub_zero(starts_with("dc_"), zero_text = "—") %>%
+  cols_label(school_label = "Escuela", district = "Distrito", dc_ap = "AP", dc_ib = "IB",
+             dc_cihs = "College in the HS", dc_rs = "Running Start", dc_cte = "CTE (técnico)", dc_any = "Cualquiera") %>%
+  tab_spanner("% de estudiantes de 9.º a 12.º que completaron al menos un curso", starts_with("dc_")) %>%
+  tab_source_note("Fuente: OSPI Report Card, medida Dual Credit, 2024-25, todos los estudiantes. Un estudiante puede contar en varias columnas, así que no suman la de “Cualquiera”. Running Start = cursos en un colegio comunitario. Ordenado por AP + IB + College in the HS.") %>%
+  opt_row_striping() %>%
+  tab_options(table.font.size = px(12), data_row.padding = px(2))
+```
+
+### Oferta de cursos (2023-24)
+
+¿Basta con el número de cursos o conviene mirar indicadores de matemáticas y ciencias avanzadas? Conviene ver ambos. El número de cursos AP distintos crece con el tamaño de la escuela e ignora el IB. Los indicadores de matemáticas y ciencias responden a otra pregunta: ¿puede un estudiante de esta escuela llegar a cálculo, física e informática? Las 15 escuelas ofrecen física y todas excepto Enumclaw reportan clases de cálculo. Aun así, Enumclaw sí reporta AP de matemáticas, que podría ser cálculo o estadística.
+
+```{r}
+#| column: page-inset-right
+si_no <- function(x) if_else(x == 1, "Sí", "No")
+cw %>%
+  arrange(desc(ap_courses)) %>%
+  transmute(school_label, enrollment, ap_courses, ap_students, ib = si_no(ib),
+            ap_math = si_no(ap_math), ap_science = si_no(ap_science), ap_cs = si_no(ap_cs),
+            calc_classes, phys_classes, cs_classes) %>%
+  gt() %>%
+  fmt_integer(enrollment) %>%
+  cols_label(school_label = "Escuela", enrollment = "Matrícula", ap_courses = "Cursos AP distintos",
+             ap_students = "Estudiantes en AP", ib = "Programa IB", ap_math = "Matemáticas", ap_science = "Ciencias",
+             ap_cs = "Informática", calc_classes = "Cálculo", phys_classes = "Física", cs_classes = "Informática ") %>%
+  tab_spanner("¿Ofrece AP de…?", c(ap_math, ap_science, ap_cs)) %>%
+  tab_spanner("Número de clases (grupos)", c(calc_classes, phys_classes, cs_classes)) %>%
+  tab_source_note("Fuente: Civil Rights Data Collection 2023-24 (Departamento de Educación de EE. UU.). Las clases de cálculo, física e informática incluyen cursos AP e IB. CRDC no cuenta los cursos IB distintos. Kentwood marca IB en CRDC con un solo estudiante, y OSPI no registra participación en IB en 2024-25.") %>%
+  opt_row_striping() %>%
+  tab_options(table.font.size = px(12), data_row.padding = px(2))
+```
+
+### Exámenes AP y SAT (2024)
+
+**Exámenes AP.** El porcentaje de exámenes AP con calificación de 3 o más, que suele bastar para crédito universitario, está entre `r rng(s24$ap_pass_rate[s24$ap_exams >= 50])` entre las escuelas con al menos 50 exámenes. Esta cifra dice más sobre el nivel de los cursos que el número de cursos que se ofrecen.
+
+**SAT.** Las escuelas se dividen en dos grupos:
+
+- **Siete escuelas de Auburn y Federal Way** aplican el SAT a casi toda la generación, probablemente en horario escolar. Sus promedios están entre `r sat_rng(1)`.
+- **Las ocho escuelas de Kent, Tahoma, Enumclaw y Sumner-Bonney Lake** tienen pocos examinados, entre 11 y 141, que eligieron presentar el examen. Sus promedios están entre `r sat_rng(0)`.
+
+**Todas las escuelas del segundo grupo tienen un promedio mayor que todas las del primero.** Eso se debe a quién presenta el examen, no a la escuela, así que estos promedios **no sirven para comparar escuelas**. Mostramos el número de examinados junto a cada promedio para que se vea esa diferencia.
+
+```{r}
+#| column: page-inset-right
+s24 %>%
+  arrange(desc(sat_broad), desc(sat_mean)) %>%
+  transmute(grupo = if_else(sat_broad == 1, "Aplicación amplia (casi toda la generación)", "Examinados voluntarios (minoría)"),
+            school_label, sat_n, sat_mean, sat_erw, sat_math, ap_exams, ap_pass_rate) %>%
+  gt(groupname_col = "grupo") %>%
+  fmt_percent(ap_pass_rate, decimals = 0) %>%
+  fmt_integer(c(sat_n, ap_exams)) %>%
+  cols_label(school_label = "Escuela", sat_n = "Examinados", sat_mean = "Promedio total", sat_erw = "Lectura y redacción",
+             sat_math = "Matemáticas", ap_exams = "Exámenes presentados", ap_pass_rate = "% con 3 o más") %>%
+  tab_spanner("SAT 2024 (400–1600)", c(sat_n, sat_mean, sat_erw, sat_math)) %>%
+  tab_spanner("Exámenes AP 2024", c(ap_exams, ap_pass_rate)) %>%
+  tab_source_note("Fuente: OSPI, “Summary by School: PSAT 10, PSAT/NMSQT, SAT, and AP” (octubre 2024), con datos del College Board. Los grupos se definen comparando los examinados con la matrícula de 12.º grado de 2023-24: en el primer grupo los examinados igualan o superan esa matrícula (el conteo incluye estudiantes de 11.º), y en el segundo son 23 % o menos. Las cifras de 2023 son parecidas y están en output/sat_table.csv.") %>%
+  tab_options(table.font.size = px(12), data_row.padding = px(2))
+```
+
+```{r}
+#| label: fig-coursework
+#| fig-cap: "Participación en AP o IB (2024-25) frente a inscripción en universidad de 4 años (todos los graduados)."
+read_rds(here("output", "figures", "coursework_vs_enr4yr.rds"))
+```
+
+La relación entre la participación en AP o IB y la inscripción en universidades de 4 años es débil. Algunos ejemplos:
+
+- Kentridge y Kentwood, primera y cuarta en inscripción, tienen de las participaciones en AP o IB más bajas (16–18 %).
+- Kent-Meridian, con una de las más altas (28 %), es penúltima en inscripción.
+- Kentlake y Enumclaw tienen la mayor participación en College in the High School (48 % y 35 %).
+
+Cuántos estudiantes toman cursos avanzados depende tanto de la población como de las políticas de cada escuela, por ejemplo si cualquier estudiante puede inscribirse en AP.
+
+### Escuelas privadas: lo que publican
+
+Las escuelas privadas no reportan a OSPI ni a CRDC. Estas son las cifras que publican ellas mismas, sin cohorte ni definición comparable:
+
+```{r}
+#| column: page-inset-right
+cw_priv %>%
+  mutate(school_name = str_remove(school_name, " (Preparatory School|Academy)$"),
+         Tipo = if_else(field == "advanced_courses", "Oferta de cursos", "Cifra publicada")) %>%
+  transmute(school_name, Tipo, Texto = text, Documento = doc_file, Cohorte = coalesce(as.character(cohort), "no indicada")) %>%
+  gt(groupname_col = "school_name") %>%
+  tab_source_note("Texto tal como aparece en los documentos de cada escuela (en inglés). Cristo Rey Jesuit Seattle no publica oferta de AP ni de doble crédito, ni resultados del SAT. El 1229 de Bellarmine no indica año ni cuántos estudiantes presentaron el examen, así que no se puede ubicar frente a ninguno de los dos grupos públicos. Los 44 cursos de Bellarmine incluyen cursos Honors, que no cuentan como AP ni como doble crédito.") %>%
+  tab_options(table.font.size = px(12), data_row.padding = px(2))
 ```
 
 ## ¿Cambia el ranking al mirar solo a los estudiantes de alto rendimiento? {#cambios}

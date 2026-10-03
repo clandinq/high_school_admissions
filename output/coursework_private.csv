@@ -1,0 +1,10 @@
+school_id,field,text,doc_file,cohort,notes,school_name
+bellarmine,advanced_courses,33 Dual Credit and AP courses; CWU and EWU College in the High School,curriculum.html,NA,NA,Bellarmine Preparatory School
+bellarmine,advanced_courses,College in the High School via Central Washington University and Eastern Washington University,curriculum.html,NA,NA,Bellarmine Preparatory School
+bellarmine,advanced_courses,"44 AP, Honors or Dual Credit courses offered",record_of_excellence.html,NA,NA,Bellarmine Preparatory School
+bellarmine,figure,1229 Average SAT score,record_of_excellence.html,NA,Year/cohort not stated,Bellarmine Preparatory School
+bellarmine,figure,"692 students take Advanced Placement, Honors or Dual Credit courses",record_of_excellence.html,NA,Count of students; total enrollment not stated on this page,Bellarmine Preparatory School
+holy_names,advanced_courses,"AP program: 17 AP courses listed for 2026-27 (Computer Science A, English Lit, Art History, Studio Art, French, Spanish, Calc AB/BC, Statistics, Biology, Chemistry, Environmental Science, Physics C: Mechanics, Psychology, US Gov, US History, World History); 80% of students take AP coursework; no dual-credit program documented",profile_2026_2027.pdf,NA,NA,Holy Names Academy
+holy_names,figure,96% of the 368 HNA students tested in 2026 earned a score of 3 or higher on at least one exam.,profile_2026_2027.pdf,2026,"Denominator is AP test-takers, not all graduates",Holy Names Academy
+holy_names,figure,79% of the Class of 2026 earned AP Scholar recognition,profile_2026_2027.pdf,2026,NA,Holy Names Academy
+holy_names,figure,80% of HNA students take AP coursework,college_counseling.html,NA,Website fast facts; cohort not stated,Holy Names Academy
