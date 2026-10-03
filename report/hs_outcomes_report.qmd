@@ -609,6 +609,11 @@ Advertencias específicas:
 
 Es una escuela católica, jesuita y mixta de la red Cristo Rey. Abrió en otoño de 2024 y su primera generación se gradúa en 2028, así que **no tiene resultados universitarios propios**.
 
+::: {.callout-warning}
+## No recomendada para este caso
+**No recomendamos Cristo Rey Jesuit Seattle para un estudiante que apunta a universidades selectivas.** La escuela no publica ninguna oferta de cursos AP ni de doble crédito; su página de currículo dice "Course Descriptions Coming Soon". Los cursos AP son clave para la admisión universitaria: muestran que el estudiante tomó el currículo más exigente disponible y permiten obtener créditos universitarios. Si la escuela publica más adelante una oferta de AP, vale la pena revisar esta conclusión.
+:::
+
 Según sus documentos, el modelo funciona así:
 
 - **Trabajo-estudio corporativo.** Cada estudiante asiste a clases cuatro días a la semana y trabaja un día en una empresa u organización del área de Seattle. Cuatro estudiantes comparten un puesto, lo que equivale a cinco días completos de trabajo al mes durante los cuatro años.
